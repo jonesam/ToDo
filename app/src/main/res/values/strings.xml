@@ -12,4 +12,5 @@
     <string name="bar_job">Job List</string>
     <string name="bar_machine">Machine</string>
     <string name="bar_resource">Resource</string>
+    <string name="bar_message">Messages</string>
 </resources>
