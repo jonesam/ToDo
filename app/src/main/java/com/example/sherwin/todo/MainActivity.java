@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
            //to send to next page
-        Button nextPage = (Button) findViewById(R.id.addButton);
+        Button nextPage = (Button) findViewById(R.id.addNewJob);
 
         // Capture button clicks
         nextPage.setOnClickListener(new View.OnClickListener() {
@@ -85,31 +85,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Delete items when clicked
-        /* listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-
-                Query myQuery = myRef.orderByValue().equalTo((String)
-                        listView.getItemAtPosition(position));
-
-                myQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.hasChildren()) {
-                            DataSnapshot firstChild = dataSnapshot.getChildren().iterator().next();
-                            firstChild.getRef().removeValue();
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                    }
-                })
-                ;
-            }
-        })
-        ;*/
     }
 }
