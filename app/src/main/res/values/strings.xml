@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ToDo</string>
+    <string name="job_id">Job ID</string>
+    <string name="date">Date</string>
+    <string name="set_importance">Priority No.</string>
+    <string name="job_des">Enter Job Description</string>
+    <string name="sel_mch1">Select Machine 1</string>
+    <string name="sel_mch2">Select Machine 2</string>
+    <string name="but_job_sub">Submit</string>
+    <string name="add_job">Add New Job</string>
+    <string name="bar_home">Home</string>
+    <string name="bar_job">Job List</string>
+    <string name="bar_machine">Machine</string>
+    <string name="bar_resource">Resource</string>
+</resources>
