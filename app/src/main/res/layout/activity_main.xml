@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="510dp"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -56,7 +56,6 @@
             android:layout_alignRight="@+id/but_msg"
             android:layout_alignStart="@+id/but_msg"
             android:layout_below="@+id/but_msg"
-            android:layout_toStartOf="@+id/ic_resTxt"
             android:text="@string/bar_message"
             android:textAlignment="center" />
 
@@ -103,8 +102,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_weight="1"
-            android:background="null"
+            android:background="#00"
             android:contentDescription="@string/bar_home"
             app:srcCompat="@drawable/ic_home" />
 
@@ -113,10 +111,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/but_home"
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toLeftOf="@+id/but_home"
             android:layout_toStartOf="@+id/but_home"
-            android:layout_weight="1"
-            android:background="null"
+            android:background="#00"
             android:contentDescription="@string/bar_machine"
             app:srcCompat="@drawable/ic_machine" />
 
@@ -125,10 +123,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/but_mch"
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toLeftOf="@+id/ic_mchTxt"
             android:layout_toStartOf="@+id/but_mch"
-            android:layout_weight="1"
-            android:background="null"
+            android:background="#00"
             android:contentDescription="@string/bar_resource"
             app:srcCompat="@drawable/ic_resources" />
 
@@ -137,10 +135,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/but_res"
-            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_toLeftOf="@+id/but_res"
             android:layout_toStartOf="@+id/but_res"
-            android:layout_weight="1"
-            android:background="null"
+            android:background="#00"
             android:contentDescription="@string/bar_message"
             app:srcCompat="@drawable/ic_mail" />
 
@@ -151,12 +149,10 @@
             android:layout_alignParentLeft="false"
             android:layout_alignParentStart="false"
             android:layout_alignTop="@+id/but_msg"
-            android:layout_column="1"
-            android:layout_marginRight="5dp"
-            android:layout_row="0.5"
+            android:layout_marginEnd="5dp"
+            android:layout_toLeftOf="@+id/but_msg"
             android:layout_toStartOf="@+id/but_msg"
-            android:layout_weight="1"
-            android:background="null"
+            android:background="#00"
             android:contentDescription="@string/bar_job"
             app:srcCompat="@drawable/ic_jobs" />
     </RelativeLayout>
