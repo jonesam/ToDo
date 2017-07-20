@@ -6,7 +6,7 @@
 
     <view
         class="android.support.design.internal.BottomNavigationMenuView"
-        id="@+id/bottom_navigation_view"
+        android:id="@+id/bottom_navigation_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
