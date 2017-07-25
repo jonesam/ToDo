@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".JobList">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,10 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".JobForm" />
-        <activity android:name=".messagePage" />
-        <activity android:name=".resourcePage" />
-        <activity android:name=".machinePage" />
-        <activity android:name=".homePage"></activity>
+        <activity android:name=".MessagePage" />
+        <activity android:name=".ResourcePage" />
+        <activity android:name=".MachinePage" />
+        <activity android:name=".HomePage"></activity>
     </application>
 
 </manifest>

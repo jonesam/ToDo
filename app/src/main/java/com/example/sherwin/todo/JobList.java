@@ -16,7 +16,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends AppCompatActivity {
+public class JobList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         final ListView listView = (ListView) findViewById(R.id.listView);
 
         // Create a new Adapter
-        final ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this,
+        final ArrayAdapter<String> adapter = new ArrayAdapter<>(JobList.this,
                 android.R.layout.simple_list_item_1, android.R.id.text1);
 
         // Assign adapter to ListView
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 // Start NewActivity.class
-                Intent myIntent = new Intent(MainActivity.this,
+                Intent myIntent = new Intent(JobList.this,
                         JobForm.class);
                 startActivity(myIntent);
             }
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         jobMenuBut.setOnClickListener( new View.OnClickListener(){
             public void onClick(View v){
 
-                Intent goToJobList = new Intent (MainActivity.this,MainActivity.class);
+                Intent goToJobList = new Intent (JobList.this,JobList.class);
                 startActivity(goToJobList);
             }
         });
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton mailMenuBut = (ImageButton) findViewById(R.id.men_msg);
         mailMenuBut.setOnClickListener( new View.OnClickListener(){
             public void onClick(View v){
-                Intent goToMsgList = new Intent (MainActivity.this,messagePage.class);
+                Intent goToMsgList = new Intent (JobList.this,MessagePage.class);
                 startActivity(goToMsgList);
             }
         });
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
         ImageButton resMenuBut = (ImageButton) findViewById(R.id.men_res);
         resMenuBut.setOnClickListener( new View.OnClickListener(){
             public void onClick(View v){
-                Intent goToResList = new Intent (MainActivity.this,resourcePage.class);
+                Intent goToResList = new Intent (JobList.this,ResourcePage.class);
                 startActivity(goToResList);
             }
         });
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         final ImageButton mchMenuBut = (ImageButton) findViewById(R.id.men_mch);
         mchMenuBut.setOnClickListener( new View.OnClickListener(){
             public void onClick(View v){
-                Intent goToMchList = new Intent (MainActivity.this,machinePage.class);
+                Intent goToMchList = new Intent (JobList.this,MachinePage.class);
                 startActivity(goToMchList);
             }
         });
@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
         homeMenuBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToHome = new Intent (MainActivity.this, homePage.class);
+                Intent goToHome = new Intent (JobList.this, HomePage.class);
                 startActivity(goToHome);
             }
         });

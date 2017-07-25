@@ -6,18 +6,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class resourcePage extends AppCompatActivity {
+public class MachinePage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resource_page);
+        setContentView(R.layout.activity_machine_page);
 
         //add to all new activities DO NOT CHANGE
         final ImageButton jobMenuBut = (ImageButton) findViewById(R.id.men_job);
         jobMenuBut.setOnClickListener( new View.OnClickListener(){
             public void onClick(View v){
-                Intent goToJobList = new Intent (resourcePage.this,MainActivity.class);
+                Intent goToJobList = new Intent (MachinePage.this,JobList.class);
                 startActivity(goToJobList);
             }
         });
@@ -25,7 +25,7 @@ public class resourcePage extends AppCompatActivity {
         final ImageButton mailMenuBut = (ImageButton) findViewById(R.id.men_msg);
         mailMenuBut.setOnClickListener( new View.OnClickListener(){
             public void onClick(View v){
-                Intent goToMsgList = new Intent (resourcePage.this,messagePage.class);
+                Intent goToMsgList = new Intent (MachinePage.this,MessagePage.class);
                 startActivity(goToMsgList);
             }
         });
@@ -33,7 +33,7 @@ public class resourcePage extends AppCompatActivity {
         final ImageButton resMenuBut = (ImageButton) findViewById(R.id.men_res);
         resMenuBut.setOnClickListener( new View.OnClickListener(){
             public void onClick(View v){
-                Intent goToResList = new Intent (resourcePage.this,resourcePage.class);
+                Intent goToResList = new Intent (MachinePage.this,ResourcePage.class);
                 startActivity(goToResList);
             }
         });
@@ -41,7 +41,7 @@ public class resourcePage extends AppCompatActivity {
         final ImageButton mchMenuBut = (ImageButton) findViewById(R.id.men_mch);
         mchMenuBut.setOnClickListener( new View.OnClickListener(){
             public void onClick(View v){
-                Intent goToMchList = new Intent (resourcePage.this,machinePage.class);
+                Intent goToMchList = new Intent (MachinePage.this,MachinePage.class);
                 startActivity(goToMchList);
             }
         });
@@ -50,10 +50,11 @@ public class resourcePage extends AppCompatActivity {
         homeMenuBut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goToHome = new Intent(resourcePage.this, homePage.class);
+                Intent goToHome = new Intent (MachinePage.this, HomePage.class);
                 startActivity(goToHome);
             }
         });
 
     }
+
 }
