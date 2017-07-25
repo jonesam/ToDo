@@ -39,7 +39,7 @@
 
 
         <ImageButton
-            android:id="@+id/but_job"
+            android:id="@+id/men_job"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -50,7 +50,7 @@
             app:srcCompat="@drawable/ic_jobs" />
 
         <ImageButton
-            android:id="@+id/but_msg"
+            android:id="@+id/men_msg"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -60,7 +60,7 @@
             app:srcCompat="@drawable/ic_mail" />
 
         <ImageButton
-            android:id="@+id/but_res"
+            android:id="@+id/men_res"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
@@ -70,17 +70,16 @@
             app:srcCompat="@drawable/ic_resources" />
 
         <ImageButton
-            android:id="@+id/but_mch"
-            android:layout_width="0dp"
+            android:id="@+id/men_mch"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:layout_weight="1"
             android:background="#00000000"
             android:contentDescription="@string/bar_machine"
             app:srcCompat="@drawable/ic_machine" />
 
         <ImageButton
-            android:id="@+id/but_home"
+            android:id="@+id/men_home"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
