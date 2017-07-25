@@ -1,17 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <view
-        class="android.support.design.internal.BottomNavigationMenuView"
-        android:id="@+id/bottom_navigation_view"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-
-        />
+        android:layout_height="0dp"
+        android:layout_weight="2.8">
 
 
-</RelativeLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:baselineAligned="false"
+        android:gravity="bottom">
+
+
+        <ImageButton
+            android:id="@+id/but_job"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:baselineAlignBottom="true"
+            android:contentDescription="@string/bar_job"
+            app:srcCompat="@drawable/ic_jobs" />
+
+        <ImageButton
+            android:id="@+id/but_msg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:contentDescription="@string/bar_message"
+            app:srcCompat="@drawable/ic_mail" />
+
+        <ImageButton
+            android:id="@+id/but_res"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:contentDescription="@string/bar_resource"
+            app:srcCompat="@drawable/ic_resources" />
+
+        <ImageButton
+            android:id="@+id/but_mch"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:contentDescription="@string/bar_machine"
+            app:srcCompat="@drawable/ic_machine" />
+
+        <ImageButton
+            android:id="@+id/but_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:contentDescription="@string/bar_home"
+            app:srcCompat="@drawable/ic_home" />
+
+    </LinearLayout>
+
+</LinearLayout>
