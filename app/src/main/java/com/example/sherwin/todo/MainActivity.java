@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -84,6 +85,49 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+        //add to all new activities DO NOT CHANGE
+        ImageButton jobMenuBut = (ImageButton) findViewById(R.id.men_job);
+        jobMenuBut.setOnClickListener( new View.OnClickListener(){
+            public void onClick(View v){
+
+                Intent goToJobList = new Intent (MainActivity.this,MainActivity.class);
+                startActivity(goToJobList);
+            }
+        });
+
+        ImageButton mailMenuBut = (ImageButton) findViewById(R.id.men_msg);
+        mailMenuBut.setOnClickListener( new View.OnClickListener(){
+            public void onClick(View v){
+                Intent goToMsgList = new Intent (MainActivity.this,messagePage.class);
+                startActivity(goToMsgList);
+            }
+        });
+
+        ImageButton resMenuBut = (ImageButton) findViewById(R.id.men_res);
+        resMenuBut.setOnClickListener( new View.OnClickListener(){
+            public void onClick(View v){
+                Intent goToResList = new Intent (MainActivity.this,resourcePage.class);
+                startActivity(goToResList);
+            }
+        });
+
+        final ImageButton mchMenuBut = (ImageButton) findViewById(R.id.men_mch);
+        mchMenuBut.setOnClickListener( new View.OnClickListener(){
+            public void onClick(View v){
+                Intent goToMchList = new Intent (MainActivity.this,machinePage.class);
+                startActivity(goToMchList);
+            }
+        });
+
+        ImageButton homeMenuBut = (ImageButton) findViewById(R.id.men_home);
+        homeMenuBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToHome = new Intent (MainActivity.this, homePage.class);
+                startActivity(goToHome);
+            }
+        });
+
 
 
     }

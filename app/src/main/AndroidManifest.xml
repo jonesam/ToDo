@@ -18,7 +18,9 @@
         </activity>
         <activity android:name=".JobForm" />
         <activity android:name=".messagePage" />
-        <activity android:name=".resourcePage"></activity>
+        <activity android:name=".resourcePage" />
+        <activity android:name=".machinePage" />
+        <activity android:name=".homePage"></activity>
     </application>
 
 </manifest>

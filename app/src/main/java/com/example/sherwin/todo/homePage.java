@@ -6,12 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class messagePage extends AppCompatActivity {
+public class homePage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_message_page);
+        setContentView(R.layout.activity_home_page);
 
         //add to all new activities DO NOT CHANGE
         final ImageButton jobMenuBut = (ImageButton) findViewById(R.id.men_job);
@@ -25,7 +25,7 @@ public class messagePage extends AppCompatActivity {
         final ImageButton mailMenuBut = (ImageButton) findViewById(R.id.men_msg);
         mailMenuBut.setOnClickListener( new View.OnClickListener(){
             public void onClick(View v){
-                Intent goToMsgList = new Intent(getBaseContext(),messagePage.class);
+                Intent goToMsgList = new Intent (getBaseContext(),messagePage.class);
                 startActivity(goToMsgList);
             }
         });
@@ -41,7 +41,7 @@ public class messagePage extends AppCompatActivity {
         final ImageButton mchMenuBut = (ImageButton) findViewById(R.id.men_mch);
         mchMenuBut.setOnClickListener( new View.OnClickListener(){
             public void onClick(View v){
-                Intent goToMchList = new Intent (getBaseContext(),machinePage.class);
+                Intent goToMchList = new Intent(getBaseContext(),machinePage.class);
                 startActivity(goToMchList);
             }
         });
@@ -54,6 +54,5 @@ public class messagePage extends AppCompatActivity {
                 startActivity(goToHome);
             }
         });
-
     }
 }
