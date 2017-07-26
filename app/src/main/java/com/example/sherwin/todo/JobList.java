@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -102,6 +103,17 @@ public class JobList extends Fragment {
                 startActivity(myIntent);
             }
         });
+
+        // Delete items when clicked
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapter, View view,
+                                    int position, long id) {
+                Intent goToJob = new Intent(getContext(), Main2Activity.class);
+                startActivity(goToJob);
+            }
+        });
+
 
         return rootView;
     }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_overview"
+        android:icon="@drawable/ic_overview"
+        android:title="@string/bar_overview" />
+    <item
+        android:id="@+id/navigation_instruction"
+        android:icon="@drawable/ic_instructions"
+        android:title="@string/bar_instruct" />
+    <item
+        android:id="@+id/navigation_safety"
+        android:icon="@drawable/ic_safety"
+        android:title="@string/bar_safety" />
+    <item
+        android:id="@+id/navigation_quality"
+        android:icon="@drawable/ic_quality"
+        android:title="@string/bar_quality" />
+    <item
+        android:id="@+id/navigation2_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/bar_home" />
+
+
+</menu>

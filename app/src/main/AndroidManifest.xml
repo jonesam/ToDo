@@ -15,11 +15,15 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>-->
+        </activity>
+        -->
         <activity android:name=".JobForm" />
-        <!--<activity android:name=".MachinePage" />
-        <activity android:name=".HomePage" />-->
+        <!--
+        <activity android:name=".MachinePage" />
+        <activity android:name=".HomePage" />
+        -->
 
+        <activity android:name=".Main2Activity"></activity>
     </application>
 
 </manifest>
