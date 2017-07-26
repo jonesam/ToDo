@@ -2,12 +2,13 @@ package com.example.sherwin.todo;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ListView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -16,18 +17,34 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class JobList extends AppCompatActivity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+public class JobList extends Fragment {
 
-        // Get ListView object from xml
-        final ListView listView = (ListView) findViewById(R.id.listView);
+    public JobList() {
+    }
+    public static JobList newInstance() {
+        JobList fragment = new JobList();
+
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View rootView =  inflater.inflate(R.layout.fragment_job_list, container, false);
 
         // Create a new Adapter
-        final ArrayAdapter<String> adapter = new ArrayAdapter<>(JobList.this,
+        final ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
                 android.R.layout.simple_list_item_1, android.R.id.text1);
+
+        // Get ListView object from xml
+        final ListView listView = (ListView)rootView.findViewById(R.id.listView);
 
         // Assign adapter to ListView
         listView.setAdapter(adapter);
@@ -48,8 +65,8 @@ public class JobList extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String previousChildName) {
 
-                        String value = dataSnapshot.getKey();
-                        adapter.add(value);
+                String value = dataSnapshot.getKey();
+                adapter.add(value);
             }
 
             // This function is called each time a child item is removed.
@@ -72,63 +89,21 @@ public class JobList extends AppCompatActivity {
             }
         });
 
-           //to send to next page
-        Button nextPage = (Button) findViewById(R.id.addNewJob);
+       ///to send to next page
+        Button nextPage = (Button) rootView.findViewById(R.id.addNewJob);
 
         // Capture button clicks
         nextPage.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 // Start NewActivity.class
-                Intent myIntent = new Intent(JobList.this,
+                Intent myIntent = new Intent(getContext(),
                         JobForm.class);
                 startActivity(myIntent);
             }
         });
-        //add to all new activities DO NOT CHANGE
-        ImageButton jobMenuBut = (ImageButton) findViewById(R.id.men_job);
-        jobMenuBut.setOnClickListener( new View.OnClickListener(){
-            public void onClick(View v){
 
-                Intent goToJobList = new Intent (JobList.this,JobList.class);
-                startActivity(goToJobList);
-            }
-        });
-
-        ImageButton mailMenuBut = (ImageButton) findViewById(R.id.men_msg);
-        mailMenuBut.setOnClickListener( new View.OnClickListener(){
-            public void onClick(View v){
-                Intent goToMsgList = new Intent (JobList.this,MessagePage.class);
-                startActivity(goToMsgList);
-            }
-        });
-
-        ImageButton resMenuBut = (ImageButton) findViewById(R.id.men_res);
-        resMenuBut.setOnClickListener( new View.OnClickListener(){
-            public void onClick(View v){
-                Intent goToResList = new Intent (JobList.this,ResourcePage.class);
-                startActivity(goToResList);
-            }
-        });
-
-        final ImageButton mchMenuBut = (ImageButton) findViewById(R.id.men_mch);
-        mchMenuBut.setOnClickListener( new View.OnClickListener(){
-            public void onClick(View v){
-                Intent goToMchList = new Intent (JobList.this,MachinePage.class);
-                startActivity(goToMchList);
-            }
-        });
-
-        ImageButton homeMenuBut = (ImageButton) findViewById(R.id.men_home);
-        homeMenuBut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent goToHome = new Intent (JobList.this, HomePage.class);
-                startActivity(goToHome);
-            }
-        });
-
-
-
+        return rootView;
     }
+
 }

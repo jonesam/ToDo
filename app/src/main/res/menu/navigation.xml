@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_job"
+        android:icon="@drawable/ic_jobs"
+        android:title="@string/bar_job" />
+    <item
+        android:id="@+id/navigation_mail"
+        android:icon="@drawable/ic_mail"
+        android:title="@string/bar_message" />
+    <item
+        android:id="@+id/navigation_resources"
+        android:icon="@drawable/ic_resources"
+        android:title="@string/bar_resource" />
+    <item
+        android:id="@+id/navigation_machine"
+        android:icon="@drawable/ic_machine"
+        android:title="@string/bar_machine" />
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/bar_home" />
+
+
+</menu>
