@@ -104,7 +104,7 @@ public class JobList extends Fragment {
             }
         });
 
-        // Delete items when clicked
+        // got to job page when clicked
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view,

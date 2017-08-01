@@ -19,10 +19,10 @@ public class JobForm extends AppCompatActivity {
         // Connect to the Firebase database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         // Add items via the Button and EditText at the bottom of the window.
-        final EditText jobNum = (EditText) findViewById(R.id.job_id);
+        final EditText jobNum = (EditText) findViewById(R.id.job_ID);
         final EditText jobDate = (EditText) findViewById(R.id.date_now);
         final EditText jobPri = (EditText) findViewById(R.id.job_imp);
-        final EditText jobDeet = (EditText) findViewById(R.id.job_dis);
+        final EditText jobDeet = (EditText) findViewById(R.id.job_des);
         final EditText jobMch1 = (EditText) findViewById(R.id.first_machine);
         final EditText jobMch2 = (EditText) findViewById(R.id.second_machine);
 
