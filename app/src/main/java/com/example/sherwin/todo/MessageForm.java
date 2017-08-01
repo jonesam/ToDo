@@ -23,6 +23,7 @@ public class MessageForm extends AppCompatActivity {
         final EditText recipient = (EditText) findViewById(R.id.recID);
         final EditText sender = (EditText) findViewById(R.id.senderID);
         final EditText msg = (EditText) findViewById(R.id.mess_body);
+        final EditText msgTitle = (EditText) findViewById(R.id.msgTitle);
 
         final DatabaseReference mess = database.getReference("MESSAGES");
         final Button but_sub = (Button) findViewById(R.id.but_msg_sub);
@@ -30,8 +31,8 @@ public class MessageForm extends AppCompatActivity {
             public void onClick(View v) {
                 // you must creat a job class
                 // asumming you did it will have the toString()method in ever parmeteter in the constracter
-                SendMessage mess1 = new SendMessage(date.getText().toString(),sender.getText().toString(),recipient.getText().toString(),msg.getText().toString());
-                mess.child(date.getText().toString()).setValue(mess1);
+                SendMessage mess1 = new SendMessage(date.getText().toString(),sender.getText().toString(),recipient.getText().toString(),msg.getText().toString(),msgTitle.getText().toString());
+                mess.child(msgTitle.getText().toString()).setValue(mess1);
                 // Get a reference to the child items it the database
 
 

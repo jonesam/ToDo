@@ -29,6 +29,7 @@
     <string name="add_message">add new message</string>
     <string name="sender_id">Name of Sender</string>
     <string name="message_body">Start Message</string>
+    <string name="msg_title">Enter Message Title</string>
     <string name="recipient_id">Name of Recipient</string>
 
     <!-- TODO: Remove or change this placeholder text -->

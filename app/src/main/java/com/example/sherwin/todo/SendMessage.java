@@ -9,12 +9,14 @@ public class SendMessage {
     String sender;
     String recipient;
     String msgBody;
+    String msgTitle;
 
-    public SendMessage(String dateMsg, String sender, String recipient, String msgBody) {
+    public SendMessage(String dateMsg, String sender, String recipient, String msgBody, String msgTitle) {
         this.dateMsg = dateMsg;
         this.sender = sender;
         this.recipient = recipient;
         this.msgBody = msgBody;
+        this.msgTitle = msgTitle;
     }
 
     public String getDateMsg() {
@@ -31,5 +33,8 @@ public class SendMessage {
 
     public String getMsgBody() {
         return msgBody;
+    }
+    public String getMsgTitle(){
+        return  msgTitle;
     }
 }
