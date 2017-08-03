@@ -31,6 +31,7 @@
     <string name="message_body">Start Message</string>
     <string name="msg_title">Enter Message Title</string>
     <string name="recipient_id">Name of Recipient</string>
+    <string name="login_scan">Scan To Login</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
