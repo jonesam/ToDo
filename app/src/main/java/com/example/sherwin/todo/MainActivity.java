@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import static com.example.sherwin.todo.R.id.navigation_home;
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
             switch (item.getItemId()) {
 
-                case R.id.navigation_home:
+                case navigation_home:
                     selectedFragment = HomePage.newInstance();
                     break;
                 case R.id.navigation_job:
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        
+        navigation.getMenu().findItem(navigation_home).setChecked(true);
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }
