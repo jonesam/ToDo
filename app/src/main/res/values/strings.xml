@@ -9,9 +9,10 @@
     <string name="but_job_sub">Submit</string>
     <string name="add_job">Add New Job</string>
     <string name="bar_home">Home</string>
+    <string name="noti_title">Notifications</string>
     <string name="bar_job">Job List</string>
-    <string name="bar_machine">Machine</string>
-    <string name="bar_resource">Resource</string>
+    <string name="bar_machine">Machines</string>
+    <string name="bar_resource">Resources</string>
     <string name="bar_message">Messages</string>
     <string name="resource_title">Gold</string>
     <string name="resource_body">Gold is a chemical element with symbol Au and atomic number 79.
@@ -32,6 +33,11 @@
     <string name="msg_title">Enter Message Title</string>
     <string name="recipient_id">Name of Recipient</string>
     <string name="login_scan">Scan To Login</string>
+    <string name="confirm_login">Confirm Login</string>
+    <string name="logo">Logo</string>
+    <string name="user_pic">User Pic</string>
+    <string name="user_name">Name</string>
+    <string name="user_id">ID</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

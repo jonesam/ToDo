@@ -5,9 +5,14 @@
     tools:context="com.example.sherwin.todo.Instructions">
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
+        android:id="@+id/instruct_title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/bar_instruct"
+        android:textAlignment="center"
+        android:textSize="50sp" />
 
 </FrameLayout>
