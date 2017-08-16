@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -36,7 +37,7 @@ public class JobForm extends AppCompatActivity {
                 job1.child(jobNum.getText().toString()).setValue(job);
         // Get a reference to the child items it the database
 
-
+                Toast.makeText(JobForm.this, "Job Listed!", Toast.LENGTH_LONG).show();
 
             }
         });

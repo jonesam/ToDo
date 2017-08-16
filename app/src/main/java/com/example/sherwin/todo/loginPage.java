@@ -5,7 +5,6 @@ import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.Toast;
 
 public class loginPage extends AppCompatActivity {
@@ -47,8 +46,12 @@ public class loginPage extends AppCompatActivity {
             try {
                 byte[] tagId = tag.getId();
                 serialId = toHexString(tagId);
-                Log.d("[ReadCardTools]", "Serial Number: " + serialId);
-                Toast.makeText(this, serialId, Toast.LENGTH_SHORT).show();
+                if (serialId.equalsIgnoreCase("04950f4ae53f80")){
+                    Intent goToConfirm = new Intent(this,confirmLogin.class);
+                    startActivity(goToConfirm);
+                } else {
+                    Toast.makeText(this, "This is not an employee!", Toast.LENGTH_LONG).show();
+                }
             } catch (NullPointerException ex) {
                 ex.printStackTrace();
                 serialId = "ERROR";
