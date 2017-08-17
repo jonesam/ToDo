@@ -54,7 +54,7 @@ public class JobList extends Fragment {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
         // Get a reference to the todoItems child items it the database
-        String userPath = "USERS/"+ ((GlobalData) this.getActivity().getApplication()).getUserID() + "/JOBS";
+        String userPath = ((GlobalData) getActivity().getApplication()).getUserPath() +"JOBS";
         final DatabaseReference myRef = database.getReference(userPath);
 
         // Assign a listener to detect changes to the child items

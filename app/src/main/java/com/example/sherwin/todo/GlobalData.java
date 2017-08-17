@@ -12,10 +12,15 @@ public class GlobalData extends Application {
 
     private String UserID;
     private Tag UserTag;
+    private String UserPath;
 
     public String getUserID() {
         UserID = toHexString(UserTag.getId());
         return UserID;
+    }
+    public String getUserPath(){
+        UserPath = "USERS/" + UserID + "/";
+        return UserPath;
     }
 
     public void setUserTag(Tag tag) {
