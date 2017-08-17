@@ -1,5 +1,6 @@
 package com.example.sherwin.todo;
 
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
@@ -8,67 +9,57 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 public class loginPage extends AppCompatActivity {
-    NfcAdapter nfcAdapter;
-    byte[] bytes;
+    NfcAdapter mAdapter;
+    PendingIntent pendingIntent;
+    private String serialId = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
-
-        nfcAdapter = NfcAdapter.getDefaultAdapter(this);
-        if (nfcAdapter == null) {
+        mAdapter = NfcAdapter.getDefaultAdapter(this);
+        pendingIntent = PendingIntent.getActivity(
+                this, 0, new Intent(this, getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
+        if (mAdapter == null) {
             Toast.makeText(this,
                     "NFC NOT supported on this devices!",
                     Toast.LENGTH_LONG).show();
             finish();
-        } else if (!nfcAdapter.isEnabled()) {
+        } else if (!mAdapter.isEnabled()) {
             Toast.makeText(this,
                     "NFC NOT Enabled!",
                     Toast.LENGTH_LONG).show();
             finish();
         }
-        performIntent(getIntent());
     }
-
-    private String serialId = "";
-
     @Override
     public void onResume() {
         super.onResume();
-        performIntent(getIntent());
+        mAdapter.enableForegroundDispatch(this, pendingIntent, null, null);
     }
+    @Override
+    public void onPause(){
+        super.onPause();
+        mAdapter.disableForegroundDispatch(this);
 
-    private void performIntent(Intent intent) {
+    }
+    @Override
+    public void onNewIntent(Intent intent) {
         String action = intent.getAction();
-        Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
-        if (action.equals(NfcAdapter.ACTION_TECH_DISCOVERED)) {
-            try {
-                byte[] tagId = tag.getId();
-                serialId = toHexString(tagId);
-                if (serialId.equalsIgnoreCase("04950f4ae53f80")){
-                    Intent goToConfirm = new Intent(this,confirmLogin.class);
+        if (NfcAdapter.ACTION_TAG_DISCOVERED.equals(action) ||
+                NfcAdapter.ACTION_TECH_DISCOVERED.equals(action)) {
+            Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
+            if (tag != null) {
+                ((GlobalData) this.getApplication()).setUserTag(tag);
+                String serialID = ((GlobalData) this.getApplication()).getUserID();
+                if(serialID.equalsIgnoreCase("04950f4ae53f80")){
+                    Intent goToConfirm = new Intent(this, confirmLogin.class);
                     startActivity(goToConfirm);
-                } else {
-                    Toast.makeText(this, "This is not an employee!", Toast.LENGTH_LONG).show();
+                }else {
+                    Toast.makeText(this,"This is not an employee!", Toast.LENGTH_SHORT).show();
                 }
-            } catch (NullPointerException ex) {
-                ex.printStackTrace();
-                serialId = "ERROR";
             }
         }
-    }
-
-    public static String toHexString(byte[] bytes) {
-        char[] hexArray = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
-        char[] hexChars = new char[bytes.length * 2];
-        int v;
-        for (int j = 0; j < bytes.length; j++) {
-            v = bytes[j] & 0xFF;
-            hexChars[j * 2] = hexArray[v / 16];
-            hexChars[j * 2 + 1] = hexArray[v % 16];
-        }
-        return new String(hexChars);
     }
 
 

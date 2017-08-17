@@ -27,7 +27,8 @@ public class JobForm extends AppCompatActivity {
         final EditText jobMch1 = (EditText) findViewById(R.id.first_machine);
         final EditText jobMch2 = (EditText) findViewById(R.id.second_machine);
 
-        final DatabaseReference job1 = database.getReference("JOBS");
+        String userPath = "USERS/"+ ((GlobalData) this.getApplication()).getUserID() + "/JOBS";
+        final DatabaseReference job1 = database.getReference(userPath);
         final Button but_sub = (Button) findViewById(R.id.but_sub);
         but_sub.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
