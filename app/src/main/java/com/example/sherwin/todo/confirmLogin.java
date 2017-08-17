@@ -7,11 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class confirmLogin extends AppCompatActivity {
 
@@ -34,30 +34,16 @@ public class confirmLogin extends AppCompatActivity {
         String idNum =((GlobalData) this.getApplication()).getUserID();
         id.setText(idNum);
 
-        myRef.addChildEventListener(new ChildEventListener() {
+        myRef.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey) {
+            public void onDataChange(DataSnapshot dataSnapshot) {
                 name.setText(dataSnapshot.child("NAME").getValue(String.class));
                 age.setText(dataSnapshot.child("AGE").getValue(String.class));
                 role.setText(dataSnapshot.child("POSITION").getValue(String.class));
             }
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {
-                name.setText(dataSnapshot.child("NAME").getValue(String.class));
-                age.setText(dataSnapshot.child("AGE").getValue(String.class));
-                role.setText(dataSnapshot.child("POSITION").getValue(String.class));
-            }
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {}
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String prevChildKey) {}
             @Override
             public void onCancelled(DatabaseError databaseError) {}
         });
-
-
-
-
 
         Button toMain = (Button) findViewById(R.id.confirm_login);
         toMain.setOnClickListener(new View.OnClickListener(){
