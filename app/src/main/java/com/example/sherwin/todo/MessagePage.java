@@ -23,18 +23,14 @@ public class MessagePage extends Fragment {
     public MessagePage() {
         // Required empty public constructor
     }
-
-
     public static MessagePage newInstance() {
         MessagePage fragment = new MessagePage();
-
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -57,7 +53,8 @@ public class MessagePage extends Fragment {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
         // Get a reference to the todoItems child items it the database
-        final DatabaseReference myRef = database.getReference("MESSAGES");
+        String userPath = ((GlobalData) getActivity().getApplication()).getUserPath() + "MESSAGES";
+        final DatabaseReference myRef = database.getReference(userPath);
         myRef.addChildEventListener(new ChildEventListener() {
 
             // This function is called once for each child that exists
