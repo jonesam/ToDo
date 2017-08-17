@@ -14,6 +14,7 @@
     <string name="bar_machine">Machines</string>
     <string name="bar_resource">Resources</string>
     <string name="bar_message">Messages</string>
+
     <string name="resource_title">Gold</string>
     <string name="resource_body">Gold is a chemical element with symbol Au and atomic number 79.
         In its purest form, it is a bright, slightly reddish yellow, dense, soft, malleable,
