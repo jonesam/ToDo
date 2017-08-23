@@ -50,7 +50,7 @@ public class loginPage extends AppCompatActivity {
                 NfcAdapter.ACTION_TECH_DISCOVERED.equals(action)) {
             Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
             if (tag != null) {
-                ((GlobalData) this.getApplication()).setUserTag(tag);
+                ((GlobalData) getApplication()).setUserTag(tag);
                 String serialID = ((GlobalData) this.getApplication()).getUserID();
                 if(serialID.equalsIgnoreCase("04950f4ae53f80")){
                     Intent goToConfirm = new Intent(this, confirmLogin.class);

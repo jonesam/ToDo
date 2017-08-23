@@ -3,16 +3,19 @@ package com.example.sherwin.todo;
 import android.app.Application;
 import android.nfc.Tag;
 
+import java.util.ArrayList;
+
 
 /**
  * Created by Sherwin on 17/08/2017.
  */
 
 public class GlobalData extends Application {
-
+//saves user ID globally + get user specific path
     private String UserID;
     private Tag UserTag;
     private String UserPath;
+    private ArrayList<MachineClass> MachineData;
 
     public String getUserID() {
         UserID = toHexString(UserTag.getId());
@@ -38,5 +41,18 @@ public class GlobalData extends Application {
         }
         return new String(hexChars);
     }
+    //end of save user ID
 
+
+    public ArrayList<MachineClass> getMachineData() {
+        if(MachineData == null)
+        {return null;
+        } else {
+        return MachineData;
+    }}
+
+    public ArrayList setMachineData(MachineClass machineData) {
+        MachineData.add(machineData);
+        return MachineData;
+    }
 }
