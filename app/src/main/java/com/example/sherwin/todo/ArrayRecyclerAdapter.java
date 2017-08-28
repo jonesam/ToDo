@@ -23,6 +23,7 @@ public class ArrayRecyclerAdapter extends RecyclerView.Adapter<ArrayRecyclerAdap
 
     @Override
     public int getItemCount() {
+
         if(machineClassList == null){return 0;}
         return machineClassList.size();
     }
