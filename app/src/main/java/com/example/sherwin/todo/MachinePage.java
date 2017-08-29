@@ -54,7 +54,7 @@ public class MachinePage extends Fragment {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot data:dataSnapshot.getChildren()
                      ) {
-                    
+
                     MachineClass mch = data.getValue(MachineClass.class);
                     test.add(mch);
                 }
