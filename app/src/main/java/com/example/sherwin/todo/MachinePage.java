@@ -59,7 +59,7 @@ public class MachinePage extends Fragment {
                     test.add(mch);
                 }
 
-                final ArrayRecyclerAdapter adapter = new ArrayRecyclerAdapter(test);
+                final ArrayRecyclerAdapter adapter = new ArrayRecyclerAdapter(getContext(),test);
                 recyclerView.setAdapter(adapter);
             }
 

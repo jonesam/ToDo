@@ -8,14 +8,17 @@ public class MachineClass {
     String NAME;
     String LAST_USER;
     String STATUS;
+    String imageURL;
 
     public MachineClass() {
     }
 
-    public MachineClass(String NAME, String LAST_USER, String STATUS) {
+    public MachineClass(String NAME, String LAST_USER, String STATUS,String imageURL) {
         this.NAME = NAME;
         this.LAST_USER = LAST_USER;
         this.STATUS = STATUS;
+        this.imageURL = imageURL;
+
     }
 
     public String getmNAME() {
@@ -34,11 +37,18 @@ public class MachineClass {
         this.LAST_USER = LAST_USER;
     }
 
-    public String getmSTATUS() {
-        return STATUS;
-    }
+    public String getmSTATUS() {return STATUS; }
 
     public void setmSTATUS(String STATUS) {
         this.STATUS = STATUS;
     }
+
+    public String getmimageURL() {
+        return imageURL;
+    }
+
+    public void setmimageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
 }

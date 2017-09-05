@@ -2,18 +2,24 @@ package com.example.sherwin.todo;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.TextView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 
 public class ResourcePage extends Fragment {
-    private TextView txtContent;
-    private Animation animationup;
-    private Animation animationdown;
+
 
     public ResourcePage() {
         // Required empty public constructor
@@ -36,35 +42,33 @@ public class ResourcePage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View resourceView =  inflater.inflate(R.layout.fragment_resource_page, container, false);
+        final RecyclerView resourcerecyclerView = (RecyclerView)resourceView.findViewById(R.id.resource_recycler_view);
 
 
-        txtContent = (TextView) resourceView.findViewById(R.id.title_text);
-        TextView txtTitle = (TextView) resourceView.findViewById(R.id.content_text);
-        txtContent.setVisibility(View.GONE);
+        LinearLayoutManager llm = new LinearLayoutManager(getContext());
+        resourcerecyclerView.setLayoutManager(llm);
+        final ArrayList<ResourceInventoryClass> testr  = new ArrayList<>();
 
-
-        animationup = AnimationUtils.loadAnimation(getActivity(), R.anim.slideup);
-        animationdown = AnimationUtils.loadAnimation(getActivity(), R.anim.slidedown);
-
-        txtTitle.setOnClickListener(new View.OnClickListener() {
+        final DatabaseReference ref = FirebaseDatabase.getInstance().getReference("RESOURCES/INVENTORY");
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View view) {
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot data:dataSnapshot.getChildren()
+                        ) {
 
-
-                if (txtContent.isShown()) {
-                    txtContent.setVisibility(View.GONE);
-                    txtContent.startAnimation(animationup);
-                } else {
-                    txtContent.setVisibility(View.VISIBLE);
-                    txtContent.startAnimation(animationdown);
+                    ResourceInventoryClass rcs = data.getValue(ResourceInventoryClass.class);
+                    testr.add(rcs);
                 }
 
-
+                final ResourceArrayRecyclerAdapter radapter = new ResourceArrayRecyclerAdapter(testr);
+                resourcerecyclerView.setAdapter(radapter);
             }
 
-
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("Chat", "The read failed: " + databaseError.getDetails());
+            }
         });
-
 
         // Inflate the layout for this fragment
         return resourceView;
