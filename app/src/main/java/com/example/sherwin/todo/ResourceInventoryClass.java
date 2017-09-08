@@ -8,15 +8,17 @@ public class ResourceInventoryClass {
     String LOCATION;
     String QUANTITY;
     String NAME;
+    String ISWIP;
+
 
     public ResourceInventoryClass() {
     }
 
-    public ResourceInventoryClass(String LOCATION, String QUANTITY, String NAME) {
+    public ResourceInventoryClass(String LOCATION, String QUANTITY, String NAME,String ISWIP) {
         this.LOCATION = LOCATION;
         this.QUANTITY = QUANTITY;
         this.NAME = NAME;
-
+        this.ISWIP = ISWIP;
     }
 
     public String getmLOCATION() {
@@ -43,4 +45,11 @@ public class ResourceInventoryClass {
         this.NAME = NAME;
     }
 
+    public String getmISWIP() {
+        return ISWIP;
+    }
+
+    public void setmISWIP(String ISWIP) {
+        this.ISWIP = ISWIP;
+    }
 }

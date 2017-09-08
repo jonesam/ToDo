@@ -5,6 +5,7 @@ package com.example.sherwin.todo;
  */
 
 public class Job {
+    JobOverview JbOver;
 
     String jobNum;
     String jobDate;
@@ -44,5 +45,11 @@ public class Job {
 
     public String getJobMch2() {
         return jobMch2;
+    }
+}
+class JobOverview extends Job{
+
+    public JobOverview(String jobNum, String jobDate, String jobPri, String jobDeet, String jobMch1, String jobMch2) {
+        super(jobNum, jobDate, jobPri, jobDeet, jobMch1, jobMch2);
     }
 }

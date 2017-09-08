@@ -57,7 +57,13 @@ public class ResourcePage extends Fragment {
                         ) {
 
                     ResourceInventoryClass rcs = data.getValue(ResourceInventoryClass.class);
-                    testr.add(rcs);
+                    if (rcs.ISWIP.equals("NO")){
+
+                        testr.add(0,rcs);
+                    }
+                   else{
+                        testr.add(rcs);
+                    }
                 }
 
                 final ResourceArrayRecyclerAdapter radapter = new ResourceArrayRecyclerAdapter(testr);

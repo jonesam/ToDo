@@ -115,7 +115,6 @@ public class JobList extends Fragment {
             }
         });
 
-
         return rootView;
     }
 
