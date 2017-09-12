@@ -14,6 +14,9 @@
     <string name="bar_machine">Machines</string>
     <string name="bar_resource">Resources</string>
     <string name="bar_message">Messages</string>
+    <string name="inventory_title">Inventory</string>
+    <string name="wip_title">Work In Progress</string>
+    <string name="employee_title">Employees</string>
 
     <string name="resource_title">Gold</string>
     <string name="resource_body">Gold is a chemical element with symbol Au and atomic number 79.
