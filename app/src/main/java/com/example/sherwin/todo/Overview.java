@@ -5,6 +5,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class Overview extends Fragment {
@@ -30,7 +35,27 @@ public class Overview extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_overview, container, false);
+        View rootView =  inflater.inflate(R.layout.fragment_overview, container, false);
+
+        // Create a new Adapter
+        final ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
+                android.R.layout.simple_list_item_1, android.R.id.text1);
+
+        // Get ListView object from xml
+        final ListView listView = (ListView)rootView.findViewById(R.id.listView);
+
+        // Assign adapter to ListView
+        listView.setAdapter(adapter);
+
+        // Connect to the Firebase database
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        // Get a reference to the todoItems child items it the database
+        String overPath = ((GlobalData) getActivity().getApplication()).getJobPath()+ "JOBOVERVIEW";
+        final DatabaseReference myRef = database.getReference(overPath);
+
+
+        return rootView;
     }
 
 }

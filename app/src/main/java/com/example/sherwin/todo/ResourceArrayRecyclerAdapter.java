@@ -89,8 +89,6 @@ public class ResourceArrayRecyclerAdapter extends RecyclerView.Adapter<RecyclerV
             vh.sQuantity.setText("Quantity: "+ci.getmQUANTITY());
             vh.sLocation.setText("Location: "+ci.getmLOCATION());
         }
-
-
     }
 
     private void configurewipViewHolder(wipViewHolder vh1, int position) {

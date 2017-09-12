@@ -15,6 +15,8 @@ public class GlobalData extends Application {
     private String UserID;
     private Tag UserTag;
     private String UserPath;
+    private String JobId;
+    private String JobPath;
     private ArrayList<MachineClass> MachineData;
 
     public String getUserID() {
@@ -43,6 +45,15 @@ public class GlobalData extends Application {
     }
     //end of save user ID
 
+
+    public String getJobPath() {
+        JobPath = UserPath + "/" +JobId +"/";
+        return JobPath;
+    }
+
+    public void setJobId(String jobId) {
+        this.JobId = jobId;
+    }
 
     public ArrayList<MachineClass> getMachineData() {
         if(MachineData == null)

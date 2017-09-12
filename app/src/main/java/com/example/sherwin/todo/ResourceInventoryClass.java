@@ -21,9 +21,7 @@ public class ResourceInventoryClass {
         this.ISWIP = ISWIP;
     }
 
-    public String getmLOCATION() {
-        return LOCATION;
-    }
+    public String getmLOCATION() {return LOCATION;}
 
     public void setmLOCATION(String LOCATION) {
         this.LOCATION = LOCATION;

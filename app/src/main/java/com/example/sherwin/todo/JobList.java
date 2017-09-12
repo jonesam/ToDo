@@ -110,8 +110,13 @@ public class JobList extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view,
                                     int position, long id) {
+                String name = (String) listView.getItemAtPosition(position);
+                ((GlobalData) getActivity().getApplication()).setJobId(name);
+                // use -((GlobalData) getActivity().getApplication()).getJobId() to refer to the job id
+
                 Intent goToJob = new Intent(getContext(), Main2Activity.class);
                 startActivity(goToJob);
+
             }
         });
 

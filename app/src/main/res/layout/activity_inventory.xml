@@ -1,18 +1,30 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.sherwin.todo.Instructions">
-
-    <!-- TODO: Update blank fragment layout -->
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/invent_title"
+        android:id="@+id/resource_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="@string/inventory_title"
+        android:text="@string/bar_resource_inventory"
         android:textAlignment="center"
-        android:textSize="50sp" />
+        android:textSize="30sp" />
 
-</FrameLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/resource_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" />
+    </RelativeLayout>
+
+</LinearLayout>
