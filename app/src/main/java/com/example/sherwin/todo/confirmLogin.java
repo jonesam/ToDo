@@ -37,9 +37,9 @@ public class confirmLogin extends AppCompatActivity {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                name.setText(dataSnapshot.child("NAME").getValue(String.class));
-                age.setText(dataSnapshot.child("AGE").getValue(String.class));
-                role.setText(dataSnapshot.child("POSITION").getValue(String.class));
+                name.setText("Name: "+dataSnapshot.child("NAME").getValue(String.class));
+                age.setText("Age: "+dataSnapshot.child("AGE").getValue(String.class));
+                role.setText("Role: "+dataSnapshot.child("POSITION").getValue(String.class));
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {}

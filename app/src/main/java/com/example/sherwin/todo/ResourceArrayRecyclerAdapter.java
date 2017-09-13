@@ -86,7 +86,7 @@ public class ResourceArrayRecyclerAdapter extends RecyclerView.Adapter<RecyclerV
         ResourceInventoryClass ci = resourceClassList.get(position);
         if (resourceClassList != null) {
             vh.sName.setText("Name: "+ci.getmNAME());
-            vh.sQuantity.setText("Quantity: "+ci.getmQUANTITY());
+            vh.sQuantity.setText("Quantity: "+Integer.toString(ci.getmQUANTITY()));
             vh.sLocation.setText("Location: "+ci.getmLOCATION());
         }
     }
@@ -95,7 +95,7 @@ public class ResourceArrayRecyclerAdapter extends RecyclerView.Adapter<RecyclerV
         ResourceInventoryClass ci = resourceClassList.get(position);
         if (resourceClassList != null) {
             vh1.wName.setText("Name: "+ci.getmNAME());
-            vh1.wQuantity.setText("Quantity: "+ci.getmQUANTITY());
+            vh1.wQuantity.setText("Quantity: "+Integer.toString(ci.getmQUANTITY()));
             vh1.wLocation.setText("Location: "+ci.getmLOCATION());
         }
     }
@@ -104,7 +104,7 @@ public class ResourceArrayRecyclerAdapter extends RecyclerView.Adapter<RecyclerV
         ResourceInventoryClass ci = resourceClassList.get(position);
         if (resourceClassList != null) {
             vh2.vName.setText("Name: "+ci.getmNAME());
-            vh2.vQuantity.setText("Quantity: "+ci.getmQUANTITY());
+            vh2.vQuantity.setText("Quantity: "+Integer.toString(ci.getmQUANTITY()));
             vh2.vLocation.setText("Location: "+ci.getmLOCATION());
         }
     }

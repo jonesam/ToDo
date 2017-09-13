@@ -6,7 +6,7 @@ package com.example.sherwin.todo;
 
 public class ResourceInventoryClass {
     String LOCATION;
-    String QUANTITY;
+    Integer QUANTITY;
     String NAME;
     String ISWIP;
 
@@ -14,7 +14,7 @@ public class ResourceInventoryClass {
     public ResourceInventoryClass() {
     }
 
-    public ResourceInventoryClass(String LOCATION, String QUANTITY, String NAME,String ISWIP) {
+    public ResourceInventoryClass(String LOCATION, Integer QUANTITY, String NAME,String ISWIP) {
         this.LOCATION = LOCATION;
         this.QUANTITY = QUANTITY;
         this.NAME = NAME;
@@ -27,11 +27,11 @@ public class ResourceInventoryClass {
         this.LOCATION = LOCATION;
     }
 
-    public String getmQUANTITY() {
+    public Integer getmQUANTITY() {
         return QUANTITY;
     }
 
-    public void setmQUANTITY(String QUANTITY) {
+    public void setmQUANTITY(Integer QUANTITY) {
         this.QUANTITY = QUANTITY;
     }
 

@@ -6,6 +6,8 @@ import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class loginPage extends AppCompatActivity {
@@ -31,7 +33,15 @@ public class loginPage extends AppCompatActivity {
                     Toast.LENGTH_LONG).show();
             finish();
         }
-    }
+        Button toMain = (Button) findViewById(R.id.but_bypass);
+        toMain.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                Intent myIntent = new Intent(loginPage.this,MainActivity.class);
+                startActivity(myIntent);
+            }
+        });
+        }
+
     @Override
     public void onResume() {
         super.onResume();
