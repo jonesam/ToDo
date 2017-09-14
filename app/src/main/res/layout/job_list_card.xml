@@ -26,8 +26,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/resource_quantity"
-            android:layout_toRightOf="@+id/job_due_date"
+            android:id="@+id/job_due_date"
+            android:layout_toRightOf="@+id/job_name"
             />
 
 

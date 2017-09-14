@@ -4,7 +4,7 @@ package com.example.sherwin.todo;
  * Created by Sherwin on 18/07/2017.
  */
 
-public class Job {
+public class JobClass {
     String jobNum;
     String jobDate;
     String jobPri;
@@ -12,7 +12,9 @@ public class Job {
     String jobMch1;
     String jobMch2;
 
-    public Job(String jobNum, String jobDate, String jobPri, String jobDeet, String jobMch1, String jobMch2) {
+   public JobClass (){ }
+
+    public JobClass(String jobNum, String jobDate, String jobPri, String jobDeet, String jobMch1, String jobMch2) {
         this.jobNum = jobNum;
         this.jobDate = jobDate;
         this.jobPri = jobPri;
@@ -21,11 +23,11 @@ public class Job {
         this.jobMch2 = jobMch2;
     }
 
-    public String getJobNum() {
+    public String getmJobNum() {
         return jobNum;
     }
 
-    public String getJobDate() {
+    public String getmJobDate() {
         return jobDate;
     }
 

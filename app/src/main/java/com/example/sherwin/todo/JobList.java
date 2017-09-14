@@ -3,20 +3,22 @@ package com.example.sherwin.todo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ListView;
+import android.widget.Toast;
 
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class JobList extends Fragment {
 
@@ -39,28 +41,32 @@ public class JobList extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootView =  inflater.inflate(R.layout.fragment_job_list, container, false);
+        final RecyclerView recyclerView = (RecyclerView)rootView.findViewById(R.id.job_list_recycler_view);
 
+        LinearLayoutManager llm = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(llm);
+        final ArrayList<JobClass> joblistclass  = new ArrayList<>();
+
+        /*
         // Create a new Adapter
         final ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
                 android.R.layout.simple_list_item_1, android.R.id.text1);
-
-        // Get ListView object from xml
-        final ListView listView = (ListView)rootView.findViewById(R.id.listView);
-
-        // Assign adapter to ListView
-        listView.setAdapter(adapter);
+            */
 
         // Connect to the Firebase database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
 
+
+
         // Get a reference to the todoItems child items it the database
-        String userPath = ((GlobalData) getActivity().getApplication()).getUserPath() +"JOBS";
-        final DatabaseReference myRef = database.getReference(userPath);
+       // String userPath = ((GlobalData) getActivity().getApplication()).getUserPath() +"JOBS/12";
+        //final DatabaseReference myRef = database.getReference(userPath);
+        final DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("USERS/04950F4AE53F80/JOBS/12");
 
         // Assign a listener to detect changes to the child items
         // of the database reference.
-        myRef.addChildEventListener(new ChildEventListener() {
-
+        myRef.addValueEventListener(new ValueEventListener() {
+/*
             // This function is called once for each child that exists
             // when the listener is added. Then it is called
             // each time a new child is added.
@@ -76,14 +82,57 @@ public class JobList extends Fragment {
                 String value = dataSnapshot.getKey();
                 adapter.remove(value);
             }
+            */
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
 
+                for (DataSnapshot data:dataSnapshot.getChildren()
+                        ) {
+
+                    String myParentNode = dataSnapshot.getKey();
+
+                    GlobalData appState = ((GlobalData) getActivity().getApplication());
+                    appState.setJobIdPath(myParentNode);
+                   Toast.makeText(getActivity(), myParentNode, Toast.LENGTH_SHORT).show();
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    // Get a reference to the todoItems child items it the database
+                    String userPath = "USERS/04950F4AE53F80/JOBS/"+((GlobalData) getActivity().getApplication()).getJobIdPath();
+                    final DatabaseReference miRef = database.getReference(userPath);
+                    miRef.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshota) {
+                            for (DataSnapshot data:dataSnapshota.getChildren()
+                                    ) {
+                                JobClass jblst = data.getValue(JobClass.class);
+                                joblistclass.add(jblst);
+                                String myParentNode = dataSnapshota.getKey();
+                                Toast.makeText(getActivity(), myParentNode, Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                            Log.e("Chat", "The read failed: " + databaseError.getDetails());
+                        }
+                    });
+
+
+                }
+
+                final JobListRecyclerAdapter adapterb = new JobListRecyclerAdapter(joblistclass);
+                recyclerView.setAdapter(adapterb);
+                
+            }
+
+
+/*
             // The following functions are also required in ChildEventListener implementations.
             public void onChildChanged(DataSnapshot dataSnapshot, String previousChildName) {
             }
 
             public void onChildMoved(DataSnapshot dataSnapshot, String previousChildName) {
             }
-
+*/
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
@@ -105,7 +154,7 @@ public class JobList extends Fragment {
         });
 
         // go to job page when clicked
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+       /* listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view,
                                     int position, long id) {
@@ -117,6 +166,7 @@ public class JobList extends Fragment {
 
             }
         });
+        */
         return rootView;
     }
 

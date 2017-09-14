@@ -54,13 +54,17 @@ public class MachinePage extends Fragment {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot data:dataSnapshot.getChildren()
                      ) {
+                    //String myParentNode = dataSnapshot.getKey();
+                   // GlobalData appState = ((GlobalData) getActivity().getApplication());
+                    ///appState.setJobIdPath(myParentNode);
+                    ///Toast.makeText(getActivity(), myParentNode, Toast.LENGTH_SHORT).show();
 
                     MachineClass mch = data.getValue(MachineClass.class);
                     test.add(mch);
                 }
 
-                final ArrayRecyclerAdapter adapter = new ArrayRecyclerAdapter(getContext(),test);
-                recyclerView.setAdapter(adapter);
+                final ArrayRecyclerAdapter adaptera = new ArrayRecyclerAdapter(getContext(),test);
+                recyclerView.setAdapter(adaptera);
             }
 
             @Override

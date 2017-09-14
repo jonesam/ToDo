@@ -17,7 +17,18 @@ public class GlobalData extends Application {
     private String UserPath;
     private String JobId;
     private String JobPath;
+    private String JobIdPath;
     private ArrayList<MachineClass> MachineData;
+
+    public String getJobIdPath()
+    {
+        return JobIdPath;
+    }//End method
+
+    public void setJobIdPath(String s)
+    {
+        JobIdPath = s;
+    }
 
     public String getUserID() {
         UserID = toHexString(UserTag.getId());

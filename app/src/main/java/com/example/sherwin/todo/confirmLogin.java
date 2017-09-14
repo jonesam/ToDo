@@ -21,9 +21,9 @@ public class confirmLogin extends AppCompatActivity {
         setContentView(R.layout.activity_confirm_login);
 
         // Get a reference to the todoItems child items it the database
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        final FirebaseDatabase basicdatabase = FirebaseDatabase.getInstance();
         String userPath = ((GlobalData) this.getApplication()).getUserPath() +"BASIC INFO";
-        final DatabaseReference myRef = database.getReference(userPath);
+        final DatabaseReference myRef = basicdatabase.getReference(userPath);
 
         final TextView id = (TextView) findViewById(R.id.id_confirm);
         final TextView name = (TextView) findViewById(R.id.name_confirm);

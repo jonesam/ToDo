@@ -34,11 +34,11 @@ public class JobForm extends AppCompatActivity {
             public void onClick(View v) {
                 // you must creat a job class
                 // asumming you did it will have the toString()method in ever parmeteter in the constracter
-                Job job = new Job(jobNum.getText().toString(),jobDate.getText().toString(),jobPri.getText().toString(),jobDeet.getText().toString(),jobMch1.getText().toString(),jobMch2.getText().toString());
+                JobClass job = new JobClass(jobNum.getText().toString(),jobDate.getText().toString(),jobPri.getText().toString(),jobDeet.getText().toString(),jobMch1.getText().toString(),jobMch2.getText().toString());
                 job1.child(jobNum.getText().toString()).setValue(job);
         // Get a reference to the child items it the database
 
-                Toast.makeText(JobForm.this, "Job Listed!", Toast.LENGTH_LONG).show();
+                Toast.makeText(JobForm.this, "JobClass Listed!", Toast.LENGTH_LONG).show();
 
             }
         });
