@@ -1,30 +1,40 @@
 package com.example.sherwin.todo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.ArrayList;
+import android.widget.Button;
 
 
-public class ResourcePage extends Fragment {
-
+public class ResourcePage extends Fragment implements View.OnClickListener {
 
     public ResourcePage() {
         // Required empty public constructor
     }
 
+    @Override
+    public void onClick(View v) {
+        // default method for handling onClick Events..
+        switch (v.getId()) {
+
+            case R.id.but_inventory:
+                Intent myIntent = new Intent(getContext(),ResourceInventory.class);
+                startActivity(myIntent);
+                break;
+
+            case R.id.but_work_in_progress:
+                Intent wipIntent = new Intent(getContext(),ResourceWorkInProgress.class);
+                startActivity(wipIntent);
+                break;
+
+            default:
+                break;
+        }
+
+    }
 
     public static ResourcePage newInstance() {
         ResourcePage fragment = new ResourcePage();
@@ -35,46 +45,18 @@ public class ResourcePage extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View resourceView =  inflater.inflate(R.layout.fragment_resource_page, container, false);
-        final RecyclerView resourcerecyclerView = (RecyclerView)resourceView.findViewById(R.id.resource_recycler_view);
+        View resourceView = inflater.inflate(R.layout.fragment_resource_page, container, false);
 
+        Button toInventory = (Button) resourceView.findViewById(R.id.but_inventory);
+        toInventory.setOnClickListener(this);
 
-        LinearLayoutManager llm = new LinearLayoutManager(getContext());
-        resourcerecyclerView.setLayoutManager(llm);
-        final ArrayList<ResourceInventoryClass> testr  = new ArrayList<>();
-
-        final DatabaseReference ref = FirebaseDatabase.getInstance().getReference("RESOURCES/INVENTORY");
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot data:dataSnapshot.getChildren()
-                        ) {
-
-                    ResourceInventoryClass rcs = data.getValue(ResourceInventoryClass.class);
-                    if (rcs.ISWIP.equals("NO")){
-
-                        testr.add(0,rcs);
-                    }
-                   else{
-                        testr.add(rcs);
-                    }
-                }
-
-                final ResourceArrayRecyclerAdapter radapter = new ResourceArrayRecyclerAdapter(testr);
-                resourcerecyclerView.setAdapter(radapter);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.e("Chat", "The read failed: " + databaseError.getDetails());
-            }
-        });
+        Button toWorkInProgress = (Button) resourceView.findViewById(R.id.but_work_in_progress);
+        toWorkInProgress.setOnClickListener(this);
 
         // Inflate the layout for this fragment
         return resourceView;

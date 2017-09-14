@@ -29,6 +29,7 @@ public class Overview extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
     }
 
     @Override
@@ -54,8 +55,6 @@ public class Overview extends Fragment {
         String overPath = ((GlobalData) getActivity().getApplication()).getJobPath()+ "JOBOVERVIEW";
         final DatabaseReference myRef = database.getReference(overPath);
 
-
         return rootView;
     }
-
 }

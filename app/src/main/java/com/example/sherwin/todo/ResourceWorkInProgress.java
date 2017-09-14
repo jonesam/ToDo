@@ -14,44 +14,38 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class Inventory extends AppCompatActivity {
+public class ResourceWorkInProgress extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inventory);
+        setContentView(R.layout.activity_work_in_progress);
 
-        final RecyclerView resourcerecyclerView = (RecyclerView)findViewById(R.id.resource_recycler_view);
-
+        final RecyclerView resourcewiprecyclerView = (RecyclerView)findViewById(R.id.resource_wip_recycler_view);
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
-        resourcerecyclerView.setLayoutManager(llm);
-        final ArrayList<ResourceInventoryClass> testr  = new ArrayList<>();
+        resourcewiprecyclerView.setLayoutManager(llm);
+        final ArrayList<ResourceWorkInProgressClass> testwip  = new ArrayList<>();
 
-        final DatabaseReference ref = FirebaseDatabase.getInstance().getReference("RESOURCES/INVENTORY");
-        ref.addValueEventListener(new ValueEventListener() {
+        final DatabaseReference wipref = FirebaseDatabase.getInstance().getReference("RESOURCES/WORKINPRGRESS");
+        wipref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot data:dataSnapshot.getChildren()
                         ) {
 
-                    ResourceInventoryClass rcs = data.getValue(ResourceInventoryClass.class);
-                    if (rcs.ISWIP.equals("NO")){
+                    ResourceWorkInProgressClass rcs = data.getValue(ResourceWorkInProgressClass.class);
 
-                        testr.add(0,rcs);
-                    }
-                    else{
-                        testr.add(rcs);
-                    }
+                    testwip.add(rcs);
                 }
 
-                final ResourceArrayRecyclerAdapter radapter = new ResourceArrayRecyclerAdapter(testr);
-                resourcerecyclerView.setAdapter(radapter);
+                final ResourceWorkInProgressArrayRecyclerAdapter radapter = new ResourceWorkInProgressArrayRecyclerAdapter(testwip);
+                resourcewiprecyclerView.setAdapter(radapter);
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Log.e("Chat", "The read failed: " + databaseError.getDetails());
             }
         });
-        }
+    }
 }

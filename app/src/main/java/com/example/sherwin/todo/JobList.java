@@ -99,13 +99,12 @@ public class JobList extends Fragment {
             public void onClick(View v) {
 
                 // Start NewActivity.class
-                Intent myIntent = new Intent(getContext(),
-                        JobForm.class);
+                Intent myIntent = new Intent(getContext(), JobForm.class);
                 startActivity(myIntent);
             }
         });
 
-        // got to job page when clicked
+        // go to job page when clicked
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view,
@@ -113,13 +112,11 @@ public class JobList extends Fragment {
                 String name = (String) listView.getItemAtPosition(position);
                 ((GlobalData) getActivity().getApplication()).setJobId(name);
                 // use -((GlobalData) getActivity().getApplication()).getJobId() to refer to the job id
-
                 Intent goToJob = new Intent(getContext(), Main2Activity.class);
                 startActivity(goToJob);
 
             }
         });
-
         return rootView;
     }
 

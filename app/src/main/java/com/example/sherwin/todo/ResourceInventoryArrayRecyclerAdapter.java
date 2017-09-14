@@ -12,13 +12,13 @@ import java.util.ArrayList;
  * Created by savio on 5/09/2017.
  */
 
-public class ResourceArrayRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class ResourceInventoryArrayRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private ArrayList<ResourceInventoryClass> resourceClassList;
 
     private final int WIP = 0, ISNOTWIP = 1;
 
-    public ResourceArrayRecyclerAdapter(ArrayList<ResourceInventoryClass> rList) {
+    public ResourceInventoryArrayRecyclerAdapter(ArrayList<ResourceInventoryClass> rList) {
         this.resourceClassList = rList;
     }
 
@@ -156,5 +156,4 @@ public class ResourceArrayRecyclerAdapter extends RecyclerView.Adapter<RecyclerV
             wLocation = (TextView)  w.findViewById(R.id.resourcewip_location);
         }
     }
-
 }

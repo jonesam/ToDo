@@ -14,6 +14,7 @@
     <string name="bar_machine">Machines</string>
     <string name="bar_resource">Resources</string>
     <string name="bar_resource_inventory">Inventory</string>
+    <string name="bar_resource_wip">Work in Progress</string>
     <string name="bar_message">Messages</string>
     <string name="inventory_title">Inventory</string>
     <string name="wip_title">Work In Progress</string>

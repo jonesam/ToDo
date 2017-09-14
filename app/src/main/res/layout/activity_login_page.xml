@@ -42,7 +42,6 @@
         android:id="@+id/but_bypass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:text="@string/login_bypass"
         android:background="#FFFF4444"
         android:padding="10dp"
