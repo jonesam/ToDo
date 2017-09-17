@@ -121,7 +121,7 @@ public class JobList extends Fragment {
 
                 final JobListRecyclerAdapter adapterb = new JobListRecyclerAdapter(joblistclass);
                 recyclerView.setAdapter(adapterb);
-                
+
             }
 
 
