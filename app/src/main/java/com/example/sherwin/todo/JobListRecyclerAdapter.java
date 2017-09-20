@@ -16,9 +16,12 @@ public class JobListRecyclerAdapter extends RecyclerView.Adapter<JobListRecycler
 
     private ArrayList<JobClass> jobClassList;
 
+
     public JobListRecyclerAdapter(ArrayList<JobClass> rList) {
         this.jobClassList = rList;
+
     }
+
 
     @Override
     public int getItemCount() {
@@ -31,9 +34,7 @@ public class JobListRecyclerAdapter extends RecyclerView.Adapter<JobListRecycler
         View itemView = LayoutInflater.
                 from(viewGroup.getContext()).
                 inflate(R.layout.job_list_card, viewGroup, false);
-
         return new jobViewHolder(itemView);
-
     }
 
     @Override
@@ -41,20 +42,22 @@ public class JobListRecyclerAdapter extends RecyclerView.Adapter<JobListRecycler
         JobClass ci = jobClassList.get(position);
         jobViewHolder.jName.setText("Name: "+ci.getmJobNum());
         jobViewHolder.jDate.setText("Quantity: "+ci.getmJobDate());
-
     }
 
-    public static class jobViewHolder extends RecyclerView.ViewHolder {
+    public static class jobViewHolder extends RecyclerView.ViewHolder  {
 
         protected TextView jName;
-        protected TextView jDate;
-
+        protected TextView jDate;;
 
         public jobViewHolder(View j) {
             super(j);
+
             jName =  (TextView) j.findViewById(R.id.job_name);
             jDate = (TextView)  j.findViewById(R.id.job_due_date);
 
         }
+
+
     }
-}
+
+    }

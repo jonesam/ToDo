@@ -12,6 +12,8 @@ public class JobClass {
     String jobMch1;
     String jobMch2;
 
+
+
    public JobClass (){ }
 
     public JobClass(String jobNum, String jobDate, String jobPri, String jobDeet, String jobMch1, String jobMch2) {

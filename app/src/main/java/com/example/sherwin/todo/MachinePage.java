@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -54,13 +55,11 @@ public class MachinePage extends Fragment {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot data:dataSnapshot.getChildren()
                      ) {
-                    //String myParentNode = dataSnapshot.getKey();
-                   // GlobalData appState = ((GlobalData) getActivity().getApplication());
-                    ///appState.setJobIdPath(myParentNode);
-                    ///Toast.makeText(getActivity(), myParentNode, Toast.LENGTH_SHORT).show();
 
                     MachineClass mch = data.getValue(MachineClass.class);
                     test.add(mch);
+                    Toast.makeText(getActivity(),
+                            "forloop", Toast.LENGTH_LONG).show();
                 }
 
                 final ArrayRecyclerAdapter adaptera = new ArrayRecyclerAdapter(getContext(),test);
