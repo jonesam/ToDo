@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class JobListRecyclerAdapter extends RecyclerView.Adapter<JobListRecyclerAdapter.jobViewHolder> {
 
     private ArrayList<JobClass> jobClassList;
+    private static OnItemClickListener clickListener;
 
 
     public JobListRecyclerAdapter(ArrayList<JobClass> rList) {
@@ -44,7 +45,11 @@ public class JobListRecyclerAdapter extends RecyclerView.Adapter<JobListRecycler
         jobViewHolder.jDate.setText("Quantity: "+ci.getmJobDate());
     }
 
-    public static class jobViewHolder extends RecyclerView.ViewHolder  {
+    public void setClickListener(OnItemClickListener itemClickListener) {
+        this.clickListener = itemClickListener;
+    }
+
+    public static class jobViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         protected TextView jName;
         protected TextView jDate;;
@@ -54,10 +59,16 @@ public class JobListRecyclerAdapter extends RecyclerView.Adapter<JobListRecycler
 
             jName =  (TextView) j.findViewById(R.id.job_name);
             jDate = (TextView)  j.findViewById(R.id.job_due_date);
+            itemView.findViewById(R.id.job_card_layout).setOnClickListener(this); // bind the listener
 
         }
 
 
+        @Override
+        public void onClick(View view) {
+            if (clickListener != null) {clickListener.onClick(view, getLayoutPosition());}
+
+        }
     }
 
     }

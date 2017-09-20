@@ -17,17 +17,17 @@ public class GlobalData extends Application {
     private String UserPath;
     private String JobId;
     private String JobPath;
-    private String JobIdPath;
+    private ArrayList<String> JobNums= new ArrayList<>();
     private ArrayList<MachineClass> MachineData;
 
-    public String getJobIdPath()
+    public ArrayList<String> getJobNums()
     {
-        return JobIdPath;
+        return JobNums;
     }//End method
 
-    public void setJobIdPath(String s)
+    public void saveJobNum(String num)
     {
-        JobIdPath = s;
+        JobNums.add(num);
     }
 
     public String getUserID() {
