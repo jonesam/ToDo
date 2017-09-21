@@ -62,9 +62,18 @@ public class GlobalData extends Application {
         return JobPath;
     }
 
+
     public void setJobId(String jobId) {
         this.JobId = jobId;
     }
+
+
+    public String getJobId()
+    {
+        return JobId;
+    }
+
+
 
     public ArrayList<MachineClass> getMachineData() {
         if(MachineData == null)

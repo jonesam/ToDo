@@ -32,10 +32,10 @@ public class JobListRecyclerAdapter extends RecyclerView.Adapter<JobListRecycler
 
     @Override
     public jobViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        View itemView = LayoutInflater.
+        View j = LayoutInflater.
                 from(viewGroup.getContext()).
                 inflate(R.layout.job_list_card, viewGroup, false);
-        return new jobViewHolder(itemView);
+        return new jobViewHolder(j);
     }
 
     @Override
@@ -59,7 +59,7 @@ public class JobListRecyclerAdapter extends RecyclerView.Adapter<JobListRecycler
 
             jName =  (TextView) j.findViewById(R.id.job_name);
             jDate = (TextView)  j.findViewById(R.id.job_due_date);
-            itemView.findViewById(R.id.job_card_layout).setOnClickListener(this); // bind the listener
+            j.setOnClickListener(this);  // bind the listener
 
         }
 
