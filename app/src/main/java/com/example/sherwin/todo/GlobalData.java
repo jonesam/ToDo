@@ -35,7 +35,6 @@ public class GlobalData extends Application {
     {
         JobNums.add(num);
     }
-
     public String getUserID() {
         UserID = toHexString(UserTag.getId());
         return UserID;
@@ -64,7 +63,7 @@ public class GlobalData extends Application {
 
 
     public String getJobPath() {
-        JobPath = UserPath + "/" +JobId +"/";
+        JobPath = UserPath + "/JOBS" +JobId +"/";
         return JobPath;
     }
 
