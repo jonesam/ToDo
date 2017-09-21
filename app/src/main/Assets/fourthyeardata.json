@@ -1,0 +1,987 @@
+{
+"Data":[
+	{
+		"JobNo": "1",
+		"JobTime": "30",
+		"JobDate": "20170911",
+		"WorkerTime": "27",
+		"JobTimeError": "-3"
+	},
+	{
+		"JobNo": "2",
+		"JobTime": "22",
+		"JobDate": "20170911",
+		"WorkerTime": "21",
+		"JobTimeError": "-1"
+	},
+	{
+		"JobNo": "3",
+		"JobTime": "20",
+		"JobDate": "20170911",
+		"WorkerTime": "16",
+		"JobTimeError": "-4"
+	},
+	{
+		"JobNo": "4",
+		"JobTime": "22",
+		"JobDate": "20170911",
+		"WorkerTime": "23",
+		"JobTimeError": "1"
+	},
+	{
+		"JobNo": "5",
+		"JobTime": "17",
+		"JobDate": "20170911",
+		"WorkerTime": "16",
+		"JobTimeError": "-1"
+	},
+	{
+		"JobNo": "6",
+		"JobTime": "29",
+		"JobDate": "20170911",
+		"WorkerTime": "26",
+		"JobTimeError": "-3"
+	},
+	{
+		"JobNo": "7",
+		"JobTime": "23",
+		"JobDate": "20170911",
+		"WorkerTime": "21",
+		"JobTimeError": "-2"
+	},
+	{
+		"JobNo": "8",
+		"JobTime": "22",
+		"JobDate": "20170911",
+		"WorkerTime": "22",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "9",
+		"JobTime": "21",
+		"JobDate": "20170911",
+		"WorkerTime": "17",
+		"JobTimeError": "-4"
+	},
+	{
+		"JobNo": "10",
+		"JobTime": "22",
+		"JobDate": "20170911",
+		"WorkerTime": "22",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "11",
+		"JobTime": "25",
+		"JobDate": "20170911",
+		"WorkerTime": "26",
+		"JobTimeError": "1"
+	},
+	{
+		"JobNo": "12",
+		"JobTime": "16",
+		"JobDate": "20170911",
+		"WorkerTime": "16",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "13",
+		"JobTime": "28",
+		"JobDate": "20170911",
+		"WorkerTime": "33",
+		"JobTimeError": "5"
+	},
+	{
+		"JobNo": "14",
+		"JobTime": "16",
+		"JobDate": "20170911",
+		"WorkerTime": "15",
+		"JobTimeError": "-1"
+	},
+	{
+		"JobNo": "15",
+		"JobTime": "28",
+		"JobDate": "20170911",
+		"WorkerTime": "25",
+		"JobTimeError": "-3"
+	},
+	{
+		"JobNo": "16",
+		"JobTime": "27",
+		"JobDate": "20170911",
+		"WorkerTime": "28",
+		"JobTimeError": "1"
+	},
+	{
+		"JobNo": "17",
+		"JobTime": "27",
+		"JobDate": "20170912",
+		"WorkerTime": "31",
+		"JobTimeError": "4"
+	},
+	{
+		"JobNo": "18",
+		"JobTime": "24",
+		"JobDate": "20170912",
+		"WorkerTime": "20",
+		"JobTimeError": "-4"
+	},
+	{
+		"JobNo": "19",
+		"JobTime": "21",
+		"JobDate": "20170912",
+		"WorkerTime": "21",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "20",
+		"JobTime": "20",
+		"JobDate": "20170912",
+		"WorkerTime": "23",
+		"JobTimeError": "3"
+	},
+	{
+		"JobNo": "21",
+		"JobTime": "25",
+		"JobDate": "20170912",
+		"WorkerTime": "20",
+		"JobTimeError": "-5"
+	},
+	{
+		"JobNo": "22",
+		"JobTime": "20",
+		"JobDate": "20170912",
+		"WorkerTime": "23",
+		"JobTimeError": "3"
+	},
+	{
+		"JobNo": "23",
+		"JobTime": "20",
+		"JobDate": "20170912",
+		"WorkerTime": "16",
+		"JobTimeError": "-4"
+	},
+	{
+		"JobNo": "24",
+		"JobTime": "15",
+		"JobDate": "20170912",
+		"WorkerTime": "16",
+		"JobTimeError": "1"
+	},
+	{
+		"JobNo": "25",
+		"JobTime": "28",
+		"JobDate": "20170912",
+		"WorkerTime": "23",
+		"JobTimeError": "-5"
+	},
+	{
+		"JobNo": "26",
+		"JobTime": "30",
+		"JobDate": "20170912",
+		"WorkerTime": "29",
+		"JobTimeError": "-1"
+	},
+	{
+		"JobNo": "27",
+		"JobTime": "21",
+		"JobDate": "20170912",
+		"WorkerTime": "23",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": "28",
+		"JobTime": "21",
+		"JobDate": "20170912",
+		"WorkerTime": "20",
+		"JobTimeError": "-1"
+	},
+	{
+		"JobNo": "29",
+		"JobTime": "23",
+		"JobDate": "20170912",
+		"WorkerTime": "23",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "30",
+		"JobTime": "19",
+		"JobDate": "20170912",
+		"WorkerTime": "18",
+		"JobTimeError": "-1"
+	},
+	{
+		"JobNo": "31",
+		"JobTime": "23",
+		"JobDate": "20170912",
+		"WorkerTime": "20",
+		"JobTimeError": "-3"
+	},
+	{
+		"JobNo": "32",
+		"JobTime": "21",
+		"JobDate": "20170912",
+		"WorkerTime": "23",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": "33",
+		"JobTime": "24",
+		"JobDate": "20170912",
+		"WorkerTime": "27",
+		"JobTimeError": "3"
+	},
+	{
+		"JobNo": "34",
+		"JobTime": "29",
+		"JobDate": "20170913",
+		"WorkerTime": "28",
+		"JobTimeError": "-1"
+	},
+	{
+		"JobNo": "35",
+		"JobTime": "26",
+		"JobDate": "20170913",
+		"WorkerTime": "27",
+		"JobTimeError": "1"
+	},
+	{
+		"JobNo": "36",
+		"JobTime": "18",
+		"JobDate": "20170913",
+		"WorkerTime": "18",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "37",
+		"JobTime": "26",
+		"JobDate": "20170913",
+		"WorkerTime": "28",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": "38",
+		"JobTime": "27",
+		"JobDate": "20170913",
+		"WorkerTime": "26",
+		"JobTimeError": "-1"
+	},
+	{
+		"JobNo": "39",
+		"JobTime": "25",
+		"JobDate": "20170913",
+		"WorkerTime": "24",
+		"JobTimeError": "-1"
+	},
+	{
+		"JobNo": "40",
+		"JobTime": "27",
+		"JobDate": "20170913",
+		"WorkerTime": "30",
+		"JobTimeError": "3"
+	},
+	{
+		"JobNo": "41",
+		"JobTime": "23",
+		"JobDate": "20170913",
+		"WorkerTime": "22",
+		"JobTimeError": "-1"
+	},
+	{
+		"JobNo": "42",
+		"JobTime": "27",
+		"JobDate": "20170913",
+		"WorkerTime": "23",
+		"JobTimeError": "-4"
+	},
+	{
+		"JobNo": "43",
+		"JobTime": "30",
+		"JobDate": "20170913",
+		"WorkerTime": "24",
+		"JobTimeError": "-6"
+	},
+	{
+		"JobNo": "44",
+		"JobTime": "17",
+		"JobDate": "20170913",
+		"WorkerTime": "19",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": "45",
+		"JobTime": "17",
+		"JobDate": "20170913",
+		"WorkerTime": "20",
+		"JobTimeError": "3"
+	},
+	{
+		"JobNo": "46",
+		"JobTime": "18",
+		"JobDate": "20170913",
+		"WorkerTime": "21",
+		"JobTimeError": "3"
+	},
+	{
+		"JobNo": "47",
+		"JobTime": "23",
+		"JobDate": "20170913",
+		"WorkerTime": "19",
+		"JobTimeError": "-4"
+	},
+	{
+		"JobNo": "48",
+		"JobTime": "17",
+		"JobDate": "20170913",
+		"WorkerTime": "14",
+		"JobTimeError": "-3"
+	},
+	{
+		"JobNo": "49",
+		"JobTime": "16",
+		"JobDate": "20170913",
+		"WorkerTime": "19",
+		"JobTimeError": "3"
+	},
+	{
+		"JobNo": "50",
+		"JobTime": "25",
+		"JobDate": "20170914",
+		"WorkerTime": "20",
+		"JobTimeError": "-5"
+	},
+	{
+		"JobNo": "51",
+		"JobTime": "22",
+		"JobDate": "20170914",
+		"WorkerTime": "20",
+		"JobTimeError": "-2"
+	},
+	{
+		"JobNo": "52",
+		"JobTime": "18",
+		"JobDate": "20170914",
+		"WorkerTime": "15",
+		"JobTimeError": "-3"
+	},
+	{
+		"JobNo": "53",
+		"JobTime": "27",
+		"JobDate": "20170914",
+		"WorkerTime": "32",
+		"JobTimeError": "5"
+	},
+	{
+		"JobNo": "54",
+		"JobTime": "19",
+		"JobDate": "20170914",
+		"WorkerTime": "16",
+		"JobTimeError": "-3"
+	},
+	{
+		"JobNo": "55",
+		"JobTime": "19",
+		"JobDate": "20170914",
+		"WorkerTime": "19",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "56",
+		"JobTime": "25",
+		"JobDate": "20170914",
+		"WorkerTime": "23",
+		"JobTimeError": "-2"
+	},
+	{
+		"JobNo": "57",
+		"JobTime": "20",
+		"JobDate": "20170914",
+		"WorkerTime": "17",
+		"JobTimeError": "-3"
+	},
+	{
+		"JobNo": "58",
+		"JobTime": "17",
+		"JobDate": "20170914",
+		"WorkerTime": "19",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": "59",
+		"JobTime": "26",
+		"JobDate": "20170914",
+		"WorkerTime": "25",
+		"JobTimeError": "-1"
+	},
+	{
+		"JobNo": "60",
+		"JobTime": "25",
+		"JobDate": "20170914",
+		"WorkerTime": "27",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": "61",
+		"JobTime": "15",
+		"JobDate": "20170914",
+		"WorkerTime": "17",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": "62",
+		"JobTime": "22",
+		"JobDate": "20170914",
+		"WorkerTime": "25",
+		"JobTimeError": "3"
+	},
+	{
+		"JobNo": "63",
+		"JobTime": "21",
+		"JobDate": "20170914",
+		"WorkerTime": "21",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "64",
+		"JobTime": "26",
+		"JobDate": "20170914",
+		"WorkerTime": "30",
+		"JobTimeError": "4"
+	},
+	{
+		"JobNo": "65",
+		"JobTime": "15",
+		"JobDate": "20170914",
+		"WorkerTime": "16",
+		"JobTimeError": "1"
+	},
+	{
+		"JobNo": "66",
+		"JobTime": "29",
+		"JobDate": "20170914",
+		"WorkerTime": "29",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "67",
+		"JobTime": "18",
+		"JobDate": "20170915",
+		"WorkerTime": "17",
+		"JobTimeError": "-1"
+	},
+	{
+		"JobNo": "68",
+		"JobTime": "17",
+		"JobDate": "20170915",
+		"WorkerTime": "16",
+		"JobTimeError": "-1"
+	},
+	{
+		"JobNo": "69",
+		"JobTime": "29",
+		"JobDate": "20170915",
+		"WorkerTime": "30",
+		"JobTimeError": "1"
+	},
+	{
+		"JobNo": "70",
+		"JobTime": "15",
+		"JobDate": "20170915",
+		"WorkerTime": "15",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "71",
+		"JobTime": "26",
+		"JobDate": "20170915",
+		"WorkerTime": "26",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "72",
+		"JobTime": "21",
+		"JobDate": "20170915",
+		"WorkerTime": "23",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": "73",
+		"JobTime": "22",
+		"JobDate": "20170915",
+		"WorkerTime": "24",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": "74",
+		"JobTime": "20",
+		"JobDate": "20170915",
+		"WorkerTime": "16",
+		"JobTimeError": "-4"
+	},
+	{
+		"JobNo": "75",
+		"JobTime": "23",
+		"JobDate": "20170915",
+		"WorkerTime": "24",
+		"JobTimeError": "1"
+	},
+	{
+		"JobNo": "76",
+		"JobTime": "27",
+		"JobDate": "20170915",
+		"WorkerTime": "27",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "77",
+		"JobTime": "18",
+		"JobDate": "20170915",
+		"WorkerTime": "20",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": "78",
+		"JobTime": "30",
+		"JobDate": "20170915",
+		"WorkerTime": "34",
+		"JobTimeError": "4"
+	},
+	{
+		"JobNo": "79",
+		"JobTime": "26",
+		"JobDate": "20170915",
+		"WorkerTime": "23",
+		"JobTimeError": "-3"
+	},
+	{
+		"JobNo": "80",
+		"JobTime": "20",
+		"JobDate": "20170915",
+		"WorkerTime": "23",
+		"JobTimeError": "3"
+	},
+	{
+		"JobNo": "81",
+		"JobTime": "25",
+		"JobDate": "20170915",
+		"WorkerTime": "20",
+		"JobTimeError": "-5"
+	},
+	{
+		"JobNo": "82",
+		"JobTime": "24",
+		"JobDate": "20170915",
+		"WorkerTime": "27",
+		"JobTimeError": "3"
+	},
+	{
+		"JobNo": "83",
+		"JobTime": "26",
+		"JobDate": "20170918",
+		"WorkerTime": "31",
+		"JobTimeError": "5"
+	},
+	{
+		"JobNo": "84",
+		"JobTime": "21",
+		"JobDate": "20170918",
+		"WorkerTime": "25",
+		"JobTimeError": "4"
+	},
+	{
+		"JobNo": "85",
+		"JobTime": "24",
+		"JobDate": "20170918",
+		"WorkerTime": "21",
+		"JobTimeError": "-3"
+	},
+	{
+		"JobNo": "86",
+		"JobTime": "20",
+		"JobDate": "20170918",
+		"WorkerTime": "19",
+		"JobTimeError": "-1"
+	},
+	{
+		"JobNo": "87",
+		"JobTime": "26",
+		"JobDate": "20170918",
+		"WorkerTime": "24",
+		"JobTimeError": "-2"
+	},
+	{
+		"JobNo": "88",
+		"JobTime": "26",
+		"JobDate": "20170918",
+		"WorkerTime": "25",
+		"JobTimeError": "-1"
+	},
+	{
+		"JobNo": "89",
+		"JobTime": "16",
+		"JobDate": "20170918",
+		"WorkerTime": "19",
+		"JobTimeError": "3"
+	},
+	{
+		"JobNo": "90",
+		"JobTime": "17",
+		"JobDate": "20170918",
+		"WorkerTime": "14",
+		"JobTimeError": "-3"
+	},
+	{
+		"JobNo": "91",
+		"JobTime": "21",
+		"JobDate": "20170918",
+		"WorkerTime": "24",
+		"JobTimeError": "3"
+	},
+	{
+		"JobNo": "92",
+		"JobTime": "20",
+		"JobDate": "20170918",
+		"WorkerTime": "20",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "93",
+		"JobTime": "26",
+		"JobDate": "20170918",
+		"WorkerTime": "30",
+		"JobTimeError": "4"
+	},
+	{
+		"JobNo": "94",
+		"JobTime": "20",
+		"JobDate": "20170918",
+		"WorkerTime": "18",
+		"JobTimeError": "-2"
+	},
+	{
+		"JobNo": "95",
+		"JobTime": "19",
+		"JobDate": "20170918",
+		"WorkerTime": "21",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": "96",
+		"JobTime": "27",
+		"JobDate": "20170918",
+		"WorkerTime": "25",
+		"JobTimeError": "-2"
+	},
+	{
+		"JobNo": "97",
+		"JobTime": "23",
+		"JobDate": "20170918",
+		"WorkerTime": "20",
+		"JobTimeError": "-3"
+	},
+	{
+		"JobNo": "98",
+		"JobTime": "23",
+		"JobDate": "20170918",
+		"WorkerTime": "25",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": "99",
+		"JobTime": "20",
+		"JobDate": "20170919",
+		"WorkerTime": "22",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": "100",
+		"JobTime": "24",
+		"JobDate": "20170919",
+		"WorkerTime": "26",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": "101",
+		"JobTime": "28",
+		"JobDate": "20170919",
+		"WorkerTime": "28",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "102",
+		"JobTime": "15",
+		"JobDate": "20170919",
+		"WorkerTime": "16",
+		"JobTimeError": "1"
+	},
+	{
+		"JobNo": "103",
+		"JobTime": "18",
+		"JobDate": "20170919",
+		"WorkerTime": "20",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": "104",
+		"JobTime": "18",
+		"JobDate": "20170919",
+		"WorkerTime": "18",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "105",
+		"JobTime": "30",
+		"JobDate": "20170919",
+		"WorkerTime": "36",
+		"JobTimeError": "6"
+	},
+	{
+		"JobNo": "106",
+		"JobTime": "18",
+		"JobDate": "20170919",
+		"WorkerTime": "21",
+		"JobTimeError": "3"
+	},
+	{
+		"JobNo": "107",
+		"JobTime": "27",
+		"JobDate": "20170919",
+		"WorkerTime": "27",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "108",
+		"JobTime": "15",
+		"JobDate": "20170919",
+		"WorkerTime": "16",
+		"JobTimeError": "1"
+	},
+	{
+		"JobNo": "109",
+		"JobTime": "18",
+		"JobDate": "20170919",
+		"WorkerTime": "21",
+		"JobTimeError": "3"
+	},
+	{
+		"JobNo": "110",
+		"JobTime": "27",
+		"JobDate": "20170919",
+		"WorkerTime": "31",
+		"JobTimeError": "4"
+	},
+	{
+		"JobNo": "111",
+		"JobTime": "18",
+		"JobDate": "20170919",
+		"WorkerTime": "19",
+		"JobTimeError": "1"
+	},
+	{
+		"JobNo": "112",
+		"JobTime": "20",
+		"JobDate": "20170919",
+		"WorkerTime": "19",
+		"JobTimeError": "-1"
+	},
+	{
+		"JobNo": "113",
+		"JobTime": "29",
+		"JobDate": "20170919",
+		"WorkerTime": "31",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": "114",
+		"JobTime": "24",
+		"JobDate": "20170920",
+		"WorkerTime": "28",
+		"JobTimeError": "4"
+	},
+	{
+		"JobNo": "115",
+		"JobTime": "22",
+		"JobDate": "20170920",
+		"WorkerTime": "19",
+		"JobTimeError": "-3"
+	},
+	{
+		"JobNo": "116",
+		"JobTime": "18",
+		"JobDate": "20170920",
+		"WorkerTime": "15",
+		"JobTimeError": "-3"
+	},
+	{
+		"JobNo": "117",
+		"JobTime": "28",
+		"JobDate": "20170920",
+		"WorkerTime": "26",
+		"JobTimeError": "-2"
+	},
+	{
+		"JobNo": "118",
+		"JobTime": "20",
+		"JobDate": "20170920",
+		"WorkerTime": "20",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "119",
+		"JobTime": "18",
+		"JobDate": "20170920",
+		"WorkerTime": "16",
+		"JobTimeError": "-2"
+	},
+	{
+		"JobNo": "120",
+		"JobTime": "28",
+		"JobDate": "20170920",
+		"WorkerTime": "23",
+		"JobTimeError": "-5"
+	},
+	{
+		"JobNo": "121",
+		"JobTime": "27",
+		"JobDate": "20170920",
+		"WorkerTime": "32",
+		"JobTimeError": "5"
+	},
+	{
+		"JobNo": "122",
+		"JobTime": "21",
+		"JobDate": "20170920",
+		"WorkerTime": "23",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": "123",
+		"JobTime": "27",
+		"JobDate": "20170920",
+		"WorkerTime": "23",
+		"JobTimeError": "-4"
+	},
+	{
+		"JobNo": "124",
+		"JobTime": "20",
+		"JobDate": "20170920",
+		"WorkerTime": "17",
+		"JobTimeError": "-3"
+	},
+	{
+		"JobNo": "125",
+		"JobTime": "26",
+		"JobDate": "20170920",
+		"WorkerTime": "23",
+		"JobTimeError": "-3"
+	},
+	{
+		"JobNo": "126",
+		"JobTime": "17",
+		"JobDate": "20170920",
+		"WorkerTime": "15",
+		"JobTimeError": "-2"
+	},
+	{
+		"JobNo": "127",
+		"JobTime": "25",
+		"JobDate": "20170920",
+		"WorkerTime": "21",
+		"JobTimeError": "-4"
+	},
+	{
+		"JobNo": "128",
+		"JobTime": "19",
+		"JobDate": "20170920",
+		"WorkerTime": "21",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": "129",
+		"JobTime": "15",
+		"JobDate": "20170920",
+		"WorkerTime": "15",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "130",
+		"JobTime": "24",
+		"JobDate": "20170920",
+		"WorkerTime": "22",
+		"JobTimeError": "-2"
+	},
+	{
+		"JobNo": "131",
+		"JobTime": "26",
+		"JobDate": "20170921",
+		"WorkerTime": "26",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "132",
+		"JobTime": "27",
+		"JobDate": "20170921",
+		"WorkerTime": "32",
+		"JobTimeError": "5"
+	},
+	{
+		"JobNo": "133",
+		"JobTime": "18",
+		"JobDate": "20170921",
+		"WorkerTime": "17",
+		"JobTimeError": "-1"
+	},
+	{
+		"JobNo": "134",
+		"JobTime": "22",
+		"JobDate": "20170921",
+		"WorkerTime": "18",
+		"JobTimeError": "-4"
+	},
+	{
+		"JobNo": "135",
+		"JobTime": "26",
+		"JobDate": "20170921",
+		"WorkerTime": "26",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "136",
+		"JobTime": "19",
+		"JobDate": "20170921",
+		"WorkerTime": "19",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "137",
+		"JobTime": "20",
+		"JobDate": "20170921",
+		"WorkerTime": "18",
+		"JobTimeError": "-2"
+	},
+	{
+		"JobNo": "138",
+		"JobTime": "18",
+		"JobDate": "20170921",
+		"WorkerTime": "18",
+		"JobTimeError": "0"
+	},
+	{
+		"JobNo": "139",
+		"JobTime": "21",
+		"JobDate": "20170921",
+		"WorkerTime": "25",
+		"JobTimeError": "4"
+	},
+	{
+		"JobNo": "140",
+		"JobTime": "17",
+		"JobDate": "20170921",
+		"WorkerTime": "19",
+		"JobTimeError": "2"
+	},
+	{
+		"JobNo": ""
+	}
+]
+}
