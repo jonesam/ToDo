@@ -29,6 +29,10 @@ public class ResourcePage extends Fragment implements View.OnClickListener {
                 Intent wipIntent = new Intent(getContext(),ResourceWorkInProgress.class);
                 startActivity(wipIntent);
                 break;
+            case R.id.but_employees:
+                Intent employeeIntent = new Intent(getContext(),EmployeePerformance.class);
+                startActivity(employeeIntent);
+                break;
 
             default:
                 break;
