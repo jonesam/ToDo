@@ -37,8 +37,9 @@
         <activity android:name=".Main2Activity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".confirmLogin" />
-        <activity android:name=".ResourceInventory"></activity>
-        <activity android:name=".ResourceWorkInProgress"></activity>
+        <activity android:name=".ResourceInventory" />
+        <activity android:name=".ResourceWorkInProgress" />
+        <activity android:name=".EmployeePerformance"></activity>
     </application>
 
 </manifest>

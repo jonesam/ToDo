@@ -19,6 +19,18 @@
     <string name="inventory_title">Inventory</string>
     <string name="wip_title">Work In Progress</string>
     <string name="employee_title">Employees</string>
+    <string-array name="Graphs">
+        <item>Select a Graph</item>
+        <item>Estimated vs Actual Time</item>
+        <item>Mocha</item>
+    </string-array>
+    <string-array name="TimeIncrements">
+        <item>Time Period</item>
+        <item>Day</item>
+        <item>Week</item>
+        <item>Month</item>
+    </string-array>
+
 
     <string name="resource_title">Gold</string>
     <string name="resource_body">Gold is a chemical element with symbol Au and atomic number 79.

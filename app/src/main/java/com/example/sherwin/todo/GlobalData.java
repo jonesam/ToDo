@@ -2,8 +2,14 @@ package com.example.sherwin.todo;
 
 import android.app.Application;
 import android.nfc.Tag;
+import android.util.Log;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Locale;
 
 
 /**
@@ -86,4 +92,85 @@ public class GlobalData extends Application {
         MachineData.add(machineData);
         return MachineData;
     }
+
+    private int dayCounter = 0;
+    private int weekCounter = 0;
+    private int monthCounter = 0;
+    private int dayPage =0;
+    private String graphDate;
+
+    private int plotTrigger;
+    private List<String> items = new ArrayList<>();
+
+    public Integer shouldPlot(){
+        return plotTrigger;
+    }
+
+    public void setSpinnerData(String checkedItem, int spinnerNo) {
+        //checks if all 3 conditions are met
+        plotTrigger = 0;
+        items.add(spinnerNo,checkedItem);
+        if(items.size() > 3) {
+            items.remove((spinnerNo + 1));
+        }
+
+        if(items.size() == 3){
+            Iterator<String> itemIterator = items.iterator();
+            while( itemIterator.hasNext()){
+                String str = itemIterator.next();
+                if (str.equalsIgnoreCase("04950f4ae53f80")||str.equalsIgnoreCase("Estimated vs Actual Time")){
+                    dayCounter++;
+                    weekCounter++;
+                    monthCounter++;
+                }else if (str.equalsIgnoreCase("Day")){
+                    dayCounter++;
+                }else if(str.equalsIgnoreCase("Month")){
+                    monthCounter++;
+                }else if (str.equalsIgnoreCase("Week")){
+                    weekCounter++;
+                }
+
+            }
+            if (dayCounter==3){
+                plotTrigger = 1;
+            }else if (weekCounter == 3){
+                plotTrigger = 2;
+            }else if (monthCounter == 3) {
+                plotTrigger = 3;
+            }
+            dayCounter = 0;
+            weekCounter = 0;
+            monthCounter = 0;
+        }
+
+
+
+
+    }
+
+    public void setDayPage(int pageLocation) {
+        dayPage = dayPage + pageLocation;
+    }
+    public void setChartDate(int Date){
+        String mydate =Integer.toString(Date);
+        SimpleDateFormat src = new SimpleDateFormat("yyyyMMdd", Locale.ENGLISH);
+        SimpleDateFormat dest = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
+        java.util.Date date = null;
+        try {
+            date = src.parse(mydate);
+        } catch (ParseException e) {
+            Log.d("Exception",e.getMessage());
+        }
+        graphDate = dest.format(date);
+
+    }
+    public String getChartDate(){
+        return graphDate;
+    }
+
+    public int getDayPage(){
+        return dayPage;
+    }
+
+
 }
