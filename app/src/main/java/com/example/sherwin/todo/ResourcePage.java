@@ -62,6 +62,8 @@ public class ResourcePage extends Fragment implements View.OnClickListener {
         Button toWorkInProgress = (Button) resourceView.findViewById(R.id.but_work_in_progress);
         toWorkInProgress.setOnClickListener(this);
 
+        Button toEmployeeActivity = (Button) resourceView.findViewById(R.id.but_employees);
+        toEmployeeActivity.setOnClickListener(this);
         // Inflate the layout for this fragment
         return resourceView;
     }
