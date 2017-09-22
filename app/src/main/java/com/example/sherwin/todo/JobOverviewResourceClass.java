@@ -8,15 +8,16 @@ public class JobOverviewResourceClass {
     String ID;
     String Name;
     Integer RESQUANTITY;
+    String shelfresneeded;
     boolean selected = false;
 
     public JobOverviewResourceClass (){ }
-    public JobOverviewResourceClass(String ID, String Name, Integer RESQUANTITY,boolean selected) {
+    public JobOverviewResourceClass(String ID, String Name, Integer RESQUANTITY,String shelfresneeded,boolean selected) {
         this.ID = ID;
         this.Name = Name;
         this.RESQUANTITY = RESQUANTITY;
         this.selected = selected;
-
+        this.shelfresneeded = shelfresneeded;
     }
 
     public String getmID() {
@@ -41,6 +42,14 @@ public class JobOverviewResourceClass {
 
     public void setmRESQUANTITY(Integer RESQUANTITY) {
         this.RESQUANTITY = RESQUANTITY;
+    }
+
+    public String getShelfresneeded() {
+        return shelfresneeded;
+    }
+
+    public void setShelfresneeded(String shelfresneeded) {
+        this.shelfresneeded = shelfresneeded;
     }
 
     public boolean isSelected() {

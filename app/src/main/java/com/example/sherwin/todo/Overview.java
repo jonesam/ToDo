@@ -46,9 +46,9 @@ public class Overview extends Fragment {
         MyCustomAdapter dataAdapter = null;
         //MAKE CLASS AND PUT HERE
         final ArrayList<JobOverviewResourceClass> JobResourcesclass = new ArrayList<>();
-
+        final String jobId = ((GlobalData)getContext().getApplicationContext()).getJobId();
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference jobsRef = rootRef.child("USERS").child("04950F4AE53F80").child("JOBS").child("12").child("RESOURCESNEEDED");
+        DatabaseReference jobsRef = rootRef.child("USERS").child("04950F4AE53F80").child("JOBS").child(jobId).child("RESOURCESNEEDED");
 
         ValueEventListener eventListener = new ValueEventListener() {
 

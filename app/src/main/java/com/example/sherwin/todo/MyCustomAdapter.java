@@ -10,6 +10,12 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 /**
@@ -56,9 +62,44 @@ public class MyCustomAdapter extends ArrayAdapter<JobOverviewResourceClass> {
                             "Clicked on Checkbox: " + cb.getText() +
                                     " is " + cb.isChecked(),
                             Toast.LENGTH_LONG).show();
-                    resource.setSelected(cb.isChecked())
-                    
-                    ;
+
+
+                    final Integer neededquant = resource.getmRESQUANTITY();
+                    final String shelfresname = resource.getShelfresneeded();
+                    //final Integer shelfquant =;
+                    final DatabaseReference ref = FirebaseDatabase.getInstance().getReference("RESOURCES/INVENTORY");
+                    ref.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            for (DataSnapshot data:dataSnapshot.getChildren()
+                                    ) {
+
+                                ResourceInventoryClass rcs = data.getValue(ResourceInventoryClass.class);
+                                String key = data.getKey();
+                                if (rcs.NAME.equals(shelfresname)){
+                                    final Integer shelfquant = rcs.getmQUANTITY();
+
+                                    final Integer NewShelfQuantity =  shelfquant - neededquant;
+                                    ref.child(key).child("QUANTITY").setValue(NewShelfQuantity);
+                                    break;
+                                }
+
+                            }
+
+                        }
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                            Log.e("Chat", "The read failed: " + databaseError.getDetails());
+                        }
+                    });
+
+
+
+                    resource.setSelected(cb.isChecked());
+                    holder.name.setOnClickListener(null);
+
+
+                   //END OF ONCLICK ACTIVITY
                 }
             });
         }
