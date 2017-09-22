@@ -23,5 +23,14 @@
         android:layout_toRightOf="@+id/Resource_checkBox"
         android:text="TextView" />
 
+    <TextView
+        android:id="@+id/Resource_checkBox_amount_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Resource_checkBox"
+        android:layout_alignBottom="@+id/Resource_checkBox"
+        android:layout_toRightOf="@+id/Resource_checkBox_Text"
+        android:text="TextView" />
+
 
 </RelativeLayout>

@@ -14,7 +14,7 @@
         android:layout_alignParentTop="true"
         android:text="@string/bar_overview"
         android:textAlignment="center"
-        android:textSize="50sp" />
+        android:textSize="30sp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -36,6 +36,16 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/job_overview_resource_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_alignParentTop="true"
+            android:text="Resoueces Needed"
+            android:textAlignment="center"
+            android:textSize="20sp" />
 
         <ListView
             android:id="@+id/job_overview_resource_list_view"

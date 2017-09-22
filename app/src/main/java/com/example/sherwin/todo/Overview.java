@@ -48,7 +48,7 @@ public class Overview extends Fragment {
         final ArrayList<JobOverviewResourceClass> JobResourcesclass = new ArrayList<>();
 
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference jobsRef = rootRef.child("USERS").child("04950F4AE53F80").child("JOBS");
+        DatabaseReference jobsRef = rootRef.child("USERS").child("04950F4AE53F80").child("JOBS").child("12").child("JOBSAFTY");
 
         ValueEventListener eventListener = new ValueEventListener() {
 
@@ -57,8 +57,8 @@ public class Overview extends Fragment {
 
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     //add new resource class and put here
-                    JobOverviewResourceClass jblst = ds.child("JOBOVERVIEW").getValue(JobOverviewResourceClass.class);
-                    JobResourcesclass.add(jblst);
+                    JobOverviewResourceClass rclst = ds.getValue(JobOverviewResourceClass.class);
+                    JobResourcesclass.add(rclst);
                 }
 
                 //create an ArrayAdaptar from the String Array
