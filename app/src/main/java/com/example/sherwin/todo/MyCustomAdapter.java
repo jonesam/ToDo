@@ -68,7 +68,8 @@ public class MyCustomAdapter extends ArrayAdapter<JobOverviewResourceClass> {
 
         JobOverviewResourceClass resource = JobResourcesclass.get(position);
         holder.code.setText(resource.getmName());
-        holder.amnt.setText("     x "+Integer.toString(resource.getmRESQUANTITY()));
+        String xx = Integer.toString(resource.getmRESQUANTITY());
+        holder.amnt.setText("     x "+ xx);
         holder.name.setChecked(resource.isSelected());
         holder.name.setTag(resource);
 

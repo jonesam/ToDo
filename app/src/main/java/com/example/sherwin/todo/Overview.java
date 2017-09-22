@@ -48,7 +48,7 @@ public class Overview extends Fragment {
         final ArrayList<JobOverviewResourceClass> JobResourcesclass = new ArrayList<>();
 
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference jobsRef = rootRef.child("USERS").child("04950F4AE53F80").child("JOBS").child("12").child("JOBSAFTY");
+        DatabaseReference jobsRef = rootRef.child("USERS").child("04950F4AE53F80").child("JOBS").child("12").child("RESOURCESNEEDED");
 
         ValueEventListener eventListener = new ValueEventListener() {
 
