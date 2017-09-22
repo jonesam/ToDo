@@ -41,22 +41,21 @@ public class Safety extends Fragment {
         LinearLayoutManager llm = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(llm);
 
-        // String jobPath = ((GlobalData)getContext()).getJobPath();//gets the job path -to use in final app
-        String jobPath = "USERS/04950F4AE53F80/JOBS/" + ((GlobalData)getContext()).getJobId();
-        final ArrayList<SafetyClass> safety = new ArrayList();
 
-        final DatabaseReference myRef = FirebaseDatabase.getInstance().getReference(jobPath);
+        final ArrayList<SafetyClass> safety = new ArrayList();
+        final DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("USERS/04950F4AE53F80/JOBS/12/");
+
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot data:dataSnapshot.getChildren()){
-                    if (data.getKey().equalsIgnoreCase("JobSafety")){
-                        safety.add(data.getValue(SafetyClass.class));
-                    }
-                    final SafetyAdapter safetyAdapter = new SafetyAdapter(safety);
-                    recyclerView.setAdapter(safetyAdapter);
-                }
+                    SafetyClass rclst = data.getValue(SafetyClass.class);
+                    safety.add(rclst);
 
+
+                }
+                final SafetyAdapter safetyAdapter = new SafetyAdapter(safety);
+                recyclerView.setAdapter(safetyAdapter);
             }
 
             @Override
@@ -64,7 +63,6 @@ public class Safety extends Fragment {
 
             }
         });
-
 
         // Inflate the layout for this fragment
         return rootView;

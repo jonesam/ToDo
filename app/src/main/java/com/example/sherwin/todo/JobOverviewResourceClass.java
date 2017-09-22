@@ -7,40 +7,40 @@ package com.example.sherwin.todo;
 public class JobOverviewResourceClass {
     String ID;
     String Name;
-    String QUANTITY;
+    Integer RESQUANTITY;
     boolean selected = false;
 
-
-    public JobOverviewResourceClass(String ID, String Name, String QUANTITY,boolean selected) {
+    public JobOverviewResourceClass (){ }
+    public JobOverviewResourceClass(String ID, String Name, Integer RESQUANTITY,boolean selected) {
         this.ID = ID;
         this.Name = Name;
-        this.QUANTITY = QUANTITY;
+        this.RESQUANTITY = RESQUANTITY;
         this.selected = selected;
 
     }
 
-    public String getID() {
+    public String getmID() {
         return ID;
     }
 
-    public void setID(String ID) {
+    public void setmID(String ID) {
         this.ID = ID;
     }
 
-    public String getName() {
+    public String getmName() {
         return Name;
     }
 
-    public void setName(String name) {
-        Name = name;
+    public void setmName(String name) {
+        this.Name = name;
     }
 
-    public String getQUANTITY() {
-        return QUANTITY;
+    public Integer getmRESQUANTITY() {
+        return RESQUANTITY;
     }
 
-    public void setQUANTITY(String QUANTITY) {
-        this.QUANTITY = QUANTITY;
+    public void setmRESQUANTITY(Integer RESQUANTITY) {
+        this.RESQUANTITY = RESQUANTITY;
     }
 
     public boolean isSelected() {

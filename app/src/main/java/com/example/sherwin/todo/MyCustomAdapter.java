@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -26,6 +27,8 @@ public class MyCustomAdapter extends ArrayAdapter<JobOverviewResourceClass> {
     }
 
     private class ViewHolder {
+        TextView code;
+        TextView amnt;
         CheckBox name;
     }
 
@@ -41,17 +44,21 @@ public class MyCustomAdapter extends ArrayAdapter<JobOverviewResourceClass> {
 
             holder = new ViewHolder();
             holder.name = (CheckBox) convertView.findViewById(R.id.Resource_checkBox);
+            holder.code = (TextView) convertView.findViewById(R.id.Resource_checkBox_Text);
+            holder.amnt = (TextView) convertView.findViewById(R.id.Resource_checkBox_amount_Text);
             convertView.setTag(holder);
 
             holder.name.setOnClickListener( new View.OnClickListener() {
                 public void onClick(View v) {
                     CheckBox cb = (CheckBox) v ;
-                    JobOverviewResourceClass country = (JobOverviewResourceClass) cb.getTag();
+                    JobOverviewResourceClass resource = (JobOverviewResourceClass) cb.getTag();
                     Toast.makeText(getContext(),
                             "Clicked on Checkbox: " + cb.getText() +
                                     " is " + cb.isChecked(),
                             Toast.LENGTH_LONG).show();
-                    country.setSelected(cb.isChecked());
+                    resource.setSelected(cb.isChecked())
+                    
+                    ;
                 }
             });
         }
@@ -59,10 +66,11 @@ public class MyCustomAdapter extends ArrayAdapter<JobOverviewResourceClass> {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        JobOverviewResourceClass country = JobResourcesclass.get(position);
-        holder.name.setText(country.getName());
-        holder.name.setChecked(country.isSelected());
-        holder.name.setTag(country);
+        JobOverviewResourceClass resource = JobResourcesclass.get(position);
+        holder.code.setText(resource.getmName());
+        holder.amnt.setText("     x "+Integer.toString(resource.getmRESQUANTITY()));
+        holder.name.setChecked(resource.isSelected());
+        holder.name.setTag(resource);
 
         return convertView;
 
