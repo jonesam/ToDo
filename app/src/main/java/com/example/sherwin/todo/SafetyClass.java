@@ -5,14 +5,14 @@ package com.example.sherwin.todo;
  */
 
 public class SafetyClass {
-    String Name;
     String Method;
+    String Name;
 
     public SafetyClass(){}
 
-    public SafetyClass(String name, String method) {
-        this.Name = name;
+    public SafetyClass(String method, String name) {
         this.Method = method;
+        this.Name = name;
     }
 
     public String getSafeName() {

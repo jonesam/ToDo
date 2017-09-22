@@ -42,27 +42,33 @@ public class Safety extends Fragment {
         recyclerView.setLayoutManager(llm);
 
         // String jobPath = ((GlobalData)getContext()).getJobPath();//gets the job path -to use in final app
-        String jobPath = "USERS/04950F4AE53F80/JOBS/" + ((GlobalData)getContext()).getJobId();
+        final String jobId = ((GlobalData)getContext().getApplicationContext()).getJobId();
+        String jobPath = "USERS/04950F4AE53F80/JOBS/" + jobId + "/";
         final ArrayList<SafetyClass> safety = new ArrayList();
 
         final DatabaseReference myRef = FirebaseDatabase.getInstance().getReference(jobPath);
+
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot data:dataSnapshot.getChildren()){
-                    if (data.getKey().equalsIgnoreCase("JobSafety")){
-                        safety.add(data.getValue(SafetyClass.class));
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+
+                    if (ds.getKey().equalsIgnoreCase("JOBSAFTY")) {
+                        for(DataSnapshot ds2:ds.getChildren()) {
+                            SafetyClass sc = ds2.getValue(SafetyClass.class);
+                            safety.add(sc);
+                        }
                     }
-                    final SafetyAdapter safetyAdapter = new SafetyAdapter(safety);
-                    recyclerView.setAdapter(safetyAdapter);
                 }
+                final SafetyAdapter safetyAdapter = new SafetyAdapter(safety);
+                recyclerView.setAdapter(safetyAdapter);
 
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
+
         });
 
 

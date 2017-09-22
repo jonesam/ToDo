@@ -26,6 +26,7 @@ public class SafetyAdapter extends RecyclerView.Adapter<SafetyAdapter.mViewHolde
     @Override
     public void onBindViewHolder(SafetyAdapter.mViewHolder mViewHolder, int i) {
         SafetyClass ci = safety.get(i);
+
         mViewHolder.vName.setText(ci.getSafeName());
         mViewHolder.vStatus.setText(ci.getSafeMethod());
     }
@@ -44,8 +45,8 @@ public class SafetyAdapter extends RecyclerView.Adapter<SafetyAdapter.mViewHolde
 
         public mViewHolder(View v) {
             super(v);
-            vName =  (TextView) v.findViewById(R.id.machine_name);
-            vStatus = (TextView)  v.findViewById(R.id.machine_info);
+            vName =  (TextView) v.findViewById(R.id.safetyTitle);
+            vStatus = (TextView)  v.findViewById(R.id.safetyInfo);
         }
     }
 }
