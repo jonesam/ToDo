@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -43,8 +44,10 @@ public class Safety extends Fragment {
 
         // String jobPath = ((GlobalData)getContext()).getJobPath();//gets the job path -to use in final app
         final String jobId = ((GlobalData)getContext().getApplicationContext()).getJobId();
+        TextView jobNum = (TextView)rootView.findViewById(R.id.job_safety_title);
+        jobNum.setText(jobId);
         String jobPath = "USERS/04950F4AE53F80/JOBS/" + jobId + "/";
-        final ArrayList<SafetyClass> safety = new ArrayList();
+        final ArrayList<SafetyClass> safety = new ArrayList<>();
 
         final DatabaseReference myRef = FirebaseDatabase.getInstance().getReference(jobPath);
 
