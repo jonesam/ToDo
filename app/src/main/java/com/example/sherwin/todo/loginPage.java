@@ -10,7 +10,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class loginPage extends AppCompatActivity {
+
+    DateFormat time = new SimpleDateFormat("h:mm a");
+    DateFormat date = new SimpleDateFormat("yyyy.MM.dd ");
     NfcAdapter mAdapter;
     PendingIntent pendingIntent;
     private String serialId = "";
@@ -55,6 +65,7 @@ public class loginPage extends AppCompatActivity {
     }
     @Override
     public void onNewIntent(Intent intent) {
+
         String action = intent.getAction();
         if (NfcAdapter.ACTION_TAG_DISCOVERED.equals(action) ||
                 NfcAdapter.ACTION_TECH_DISCOVERED.equals(action)) {
@@ -63,6 +74,11 @@ public class loginPage extends AppCompatActivity {
                 ((GlobalData) getApplication()).setUserTag(tag);
                 String serialID = ((GlobalData) this.getApplication()).getUserID();
                 if(serialID.equalsIgnoreCase("04950f4ae53f80")){
+                    String jobPath = "USERS/04950F4AE53F80/LOGTIME/";
+                    final DatabaseReference myRef = FirebaseDatabase.getInstance().getReference(jobPath);
+                    LogClass logClass = new LogClass(date.format(Calendar.getInstance().getTime()), time.format(Calendar.getInstance().getTime()),"");
+                    myRef.child(date.format(Calendar.getInstance().getTime())).setValue(logClass);
+
                     Intent goToConfirm = new Intent(this, confirmLogin.class);
                     startActivity(goToConfirm);
                 }else {
