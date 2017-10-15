@@ -45,7 +45,7 @@ public class Safety extends Fragment {
         // String jobPath = ((GlobalData)getContext()).getJobPath();//gets the job path -to use in final app
         final String jobId = ((GlobalData)getContext().getApplicationContext()).getJobId();
         TextView jobNum = (TextView)rootView.findViewById(R.id.job_safety_title);
-        jobNum.setText(jobId);
+        jobNum.setText("Job Number: "+jobId);
         String jobPath = "USERS/04950F4AE53F80/JOBS/" + jobId + "/";
         final ArrayList<SafetyClass> safety = new ArrayList<>();
 

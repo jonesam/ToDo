@@ -15,7 +15,7 @@
         android:layout_margin="16dp"
         android:text="@string/bar_safety"
         android:textAlignment="center"
-        android:textSize="50sp" />
+        android:textSize="40sp" />
 
     <TextView
         android:id="@+id/safety_title"

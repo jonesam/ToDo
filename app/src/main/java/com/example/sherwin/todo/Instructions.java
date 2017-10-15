@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 public class Instructions extends Fragment {
 
@@ -25,8 +26,13 @@ public class Instructions extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_instructions, container, false);
+        final String jobId = ((GlobalData)getContext().getApplicationContext()).getJobId();
+
+        TextView jobNum = (TextView)rootView.findViewById(R.id.job_instruct_title);
+        jobNum.setText("Job Number: "+jobId);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_instructions, container, false);
+        return rootView;
     }
 
 }

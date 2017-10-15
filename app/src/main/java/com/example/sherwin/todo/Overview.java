@@ -49,7 +49,6 @@ public class Overview extends Fragment {
         //MAKE CLASS AND PUT HERE
         final ArrayList<JobOverviewResourceClass> JobResourcesclass = new ArrayList<>();
         final String jobId = ((GlobalData)getContext().getApplicationContext()).getJobId();
-<<<<<<< HEAD
 
         TextView jobNum = (TextView)rootView.findViewById(R.id.job_overview_title);
         jobNum.setText("Job Number: "+jobId);
@@ -57,11 +56,6 @@ public class Overview extends Fragment {
         ProgressBar firstBar = (ProgressBar)rootView.findViewById(R.id.progressBar);
         firstBar.setMax(100);
         firstBar.setProgress(66);
-
-=======
-        TextView jobNum = (TextView)rootView.findViewById(R.id.job_overview_title);
-        jobNum.setText(jobId);
->>>>>>> 834671d765cee420466a5253a06a52fe1d42d8f2
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         DatabaseReference jobsRef = rootRef.child("USERS").child("04950F4AE53F80").child("JOBS").child(jobId).child("RESOURCESNEEDED");
 
@@ -75,23 +69,18 @@ public class Overview extends Fragment {
                     JobOverviewResourceClass rclst = ds.getValue(JobOverviewResourceClass.class);
                     JobResourcesclass.add(rclst);
                 }
-
                 //create an ArrayAdaptar from the String Array
 
                 final MyCustomAdapter dataAdapter = new MyCustomAdapter(getContext(),R.layout.job_overview_resource_checks, JobResourcesclass);
 
                 // Assign adapter to ListView
                 listView.setAdapter(dataAdapter);
-
             }
-
             @Override
             public void onCancelled(DatabaseError databaseError) {
             }
         };
         jobsRef.addListenerForSingleValueEvent(eventListener);
-
-
         return rootView;
     }
 

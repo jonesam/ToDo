@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 public class Quality extends Fragment {
@@ -25,7 +26,13 @@ public class Quality extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_quality, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_quality, container, false);
+        final String jobId = ((GlobalData)getContext().getApplicationContext()).getJobId();
+        TextView jobNum = (TextView)rootView.findViewById(R.id.job_qual_title);
+
+        jobNum.setText("Job Number: "+jobId);
+
+        return rootView;
     }
 
 }
