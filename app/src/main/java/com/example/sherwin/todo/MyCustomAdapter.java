@@ -62,8 +62,6 @@ public class MyCustomAdapter extends ArrayAdapter<JobOverviewResourceClass> {
                             "Clicked on Checkbox: " + cb.getText() +
                                     " is " + cb.isChecked(),
                             Toast.LENGTH_LONG).show();
-
-
                     final Integer neededquant = resource.getmRESQUANTITY();
                     final String shelfresname = resource.getShelfresneeded();
                     //final Integer shelfquant =;
@@ -83,20 +81,14 @@ public class MyCustomAdapter extends ArrayAdapter<JobOverviewResourceClass> {
                                     ref.child(key).child("QUANTITY").setValue(NewShelfQuantity);
                                     break;
                                 }
-
                             }
-
                         }
                         @Override
                         public void onCancelled(DatabaseError databaseError) {
                             Log.e("Chat", "The read failed: " + databaseError.getDetails());
                         }
                     });
-
-
-
                     resource.setSelected(cb.isChecked());
-
                    //END OF ONCLICK ACTIVITY
                 }
             });

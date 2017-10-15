@@ -19,6 +19,7 @@
     <string name="inventory_title">Inventory</string>
     <string name="wip_title">Work In Progress</string>
     <string name="employee_title">Employees</string>
+    <string name="end_but">Click To Complete</string>
     <string-array name="Graphs">
         <item>Select a Graph</item>
         <item>Estimated vs Actual Time</item>

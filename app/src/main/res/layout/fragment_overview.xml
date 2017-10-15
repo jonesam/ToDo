@@ -10,7 +10,6 @@
         android:id="@+id/job_overview_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_margin="16dp"
         android:text="@string/bar_overview"
         android:textAlignment="center"
@@ -20,8 +19,6 @@
         android:id="@+id/overview_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:text="@string/bar_overview"
         android:textAlignment="center"
         android:textSize="30sp" />
@@ -37,8 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:layout_alignParentTop="true"
-            android:text="Resoueces Needed"
+            android:text="Resources Needed"
             android:textAlignment="center"
             android:textSize="20sp" />
 

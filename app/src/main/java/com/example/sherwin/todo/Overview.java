@@ -71,18 +71,6 @@ public class Overview extends Fragment {
                 // Assign adapter to ListView
                 listView.setAdapter(dataAdapter);
 
-/*
-              listView.setOnItemClickListener(new OnItemClickListener() {
-                  public void onItemClick(AdapterView<?> parent, View view,
-                                          int position, long id) {
-                      // When clicked, show a toast with the TextView text chang this to do integer addition
-                      Country country = (Country) parent.getItemAtPosition(position);
-                      Toast.makeText(getApplicationContext(),
-                              "Clicked on Row: " + country.getName(),
-                              Toast.LENGTH_LONG).show();
-                  }
-              });
-              */
             }
 
             @Override
@@ -96,13 +84,6 @@ public class Overview extends Fragment {
     }
 
 
-/*  @Override
-  public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                           Bundle savedInstanceState) {
-      // Inflate the layout for this fragment
 
-      return inflater.inflate(R.layout.fragment_overview, container, false);
-  }
-  */
 
 }
