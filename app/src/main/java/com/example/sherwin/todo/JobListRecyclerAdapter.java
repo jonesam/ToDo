@@ -41,8 +41,10 @@ public class JobListRecyclerAdapter extends RecyclerView.Adapter<JobListRecycler
     @Override
     public void onBindViewHolder(jobViewHolder jobViewHolder, int position) {
         JobClass ci = jobClassList.get(position);
-        jobViewHolder.jName.setText("Name: "+ci.getmJobNum());
-        jobViewHolder.jDate.setText("Quantity: "+ci.getmJobDate());
+        jobViewHolder.jName.setText("Job Name: "+ci.getmJobDeet());
+        jobViewHolder.jDate.setText("Due Date: "+ci.getmJobDate());
+        jobViewHolder.jNumb.setText("Job #: "+ci.getmJobNum());
+        jobViewHolder.jTime.setText("Estamated Job Time: "+ci.getmJobMch2()+" minutes");
     }
 
     public void setClickListener(OnItemClickListener itemClickListener) {
@@ -52,13 +54,19 @@ public class JobListRecyclerAdapter extends RecyclerView.Adapter<JobListRecycler
     public static class jobViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         protected TextView jName;
-        protected TextView jDate;;
+        protected TextView jDate;
+        protected TextView jNumb;
+        protected TextView jTime;
+
 
         public jobViewHolder(View j) {
             super(j);
 
+
             jName =  (TextView) j.findViewById(R.id.job_name);
             jDate = (TextView)  j.findViewById(R.id.job_due_date);
+            jNumb = (TextView)  j.findViewById(R.id.job_Num);
+            jTime = (TextView)  j.findViewById(R.id.job_time);
             j.setOnClickListener(this);  // bind the listener
 
         }

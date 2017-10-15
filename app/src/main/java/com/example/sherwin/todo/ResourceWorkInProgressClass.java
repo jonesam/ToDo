@@ -7,6 +7,7 @@ package com.example.sherwin.todo;
 public class ResourceWorkInProgressClass {
     String LOCATION;
     Integer QUANTITY;
+    String OWNER;
     String NAME;
     String ISWIP;
 
@@ -14,9 +15,10 @@ public class ResourceWorkInProgressClass {
     public ResourceWorkInProgressClass() {
     }
 
-    public ResourceWorkInProgressClass(String LOCATION, Integer QUANTITY, String NAME,String ISWIP) {
+    public ResourceWorkInProgressClass(String LOCATION, Integer QUANTITY,String OWNER, String NAME,String ISWIP) {
         this.LOCATION = LOCATION;
         this.QUANTITY = QUANTITY;
+        this.OWNER = OWNER;
         this.NAME = NAME;
         this.ISWIP = ISWIP;
     }
@@ -33,6 +35,14 @@ public class ResourceWorkInProgressClass {
 
     public void setmQUANTITY(Integer QUANTITY) {
         this.QUANTITY = QUANTITY;
+    }
+
+    public String getmOWNER() {
+        return OWNER;
+    }
+
+    public void setmOWNER(String OWNER) {
+        this.OWNER = OWNER;
     }
 
     public String getmNAME() {

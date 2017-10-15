@@ -9,15 +9,17 @@ public class MachineClass {
     String LAST_USER;
     String STATUS;
     String imageURL;
+    String HOURS;
 
     public MachineClass() {
     }
 
-    public MachineClass(String NAME, String LAST_USER, String STATUS,String imageURL) {
+    public MachineClass(String NAME, String LAST_USER, String STATUS,String imageURL, String HOURS) {
         this.NAME = NAME;
         this.LAST_USER = LAST_USER;
         this.STATUS = STATUS;
         this.imageURL = imageURL;
+        this.HOURS = HOURS;
 
     }
 
@@ -51,4 +53,11 @@ public class MachineClass {
         this.imageURL = imageURL;
     }
 
+    public String getmHOURS() {
+        return HOURS;
+    }
+
+    public void setmHOURS(String HOURS) {
+        this.HOURS = HOURS;
+    }
 }

@@ -37,7 +37,7 @@ public class JobClass {
         return jobPri;
     }
 
-    public String getJobDeet() {
+    public String getmJobDeet() {
         return jobDeet;
     }
 
@@ -45,7 +45,7 @@ public class JobClass {
         return jobMch1;
     }
 
-    public String getJobMch2() {
+    public String getmJobMch2() {
         return jobMch2;
     }
 }

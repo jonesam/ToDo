@@ -38,8 +38,8 @@ public class ArrayRecyclerAdapter extends RecyclerView.Adapter<ArrayRecyclerAdap
     public void onBindViewHolder(mViewHolder mViewHolder, int i) {
         MachineClass ci = machineClassList.get(i);
         mViewHolder.vName.setText(ci.getmNAME());
-        mViewHolder.vStatus.setText(ci.getmSTATUS());
-
+        mViewHolder.vStatus.setText("Status: "+ci.getmSTATUS());
+        mViewHolder.vHours.setText("Hours till next Service: "+ci.getmHOURS());
         Glide.with(context).load(ci.getmimageURL()).into(mViewHolder.vImage);
     }
 
@@ -56,6 +56,7 @@ public class ArrayRecyclerAdapter extends RecyclerView.Adapter<ArrayRecyclerAdap
 
         protected TextView vName;
         protected TextView vStatus;
+        protected TextView vHours;
         protected ImageView vImage;
 
 
@@ -64,6 +65,7 @@ public class ArrayRecyclerAdapter extends RecyclerView.Adapter<ArrayRecyclerAdap
             super(v);
             vName =  (TextView) v.findViewById(R.id.machine_name);
             vStatus = (TextView)  v.findViewById(R.id.machine_info);
+            vHours = (TextView)  v.findViewById(R.id.machine_hours);
             vImage = (ImageView) v.findViewById(R.id.machine_image);
 
 
