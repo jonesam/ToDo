@@ -30,7 +30,7 @@ public class ResourceWorkInProgressArrayRecyclerAdapter extends RecyclerView.Ada
     public wipViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View itemView = LayoutInflater.
                 from(viewGroup.getContext()).
-                inflate(R.layout.wip_card, viewGroup, false);
+                inflate(R.layout.work_in_progress_card, viewGroup, false);
 
         return new wipViewHolder(itemView);
 
@@ -42,20 +42,23 @@ public class ResourceWorkInProgressArrayRecyclerAdapter extends RecyclerView.Ada
         wipViewHolder.wName.setText("Name: "+ci.getmNAME());
         wipViewHolder.wQuantity.setText("Quantity: "+Integer.toString(ci.getmQUANTITY()));
         wipViewHolder.wLocation.setText("Location: "+ci.getmLOCATION());
+        wipViewHolder.wOwner.setText("Owner: "+ci.getmOWNER());
         }
 
     public static class wipViewHolder extends RecyclerView.ViewHolder {
 
         protected TextView wName;
         protected TextView wQuantity;
+        protected TextView wOwner;
         protected TextView wLocation;
 
 
         public wipViewHolder(View w) {
             super(w);
-            wName =  (TextView) w.findViewById(R.id.resourcewip_name);
-            wQuantity = (TextView)  w.findViewById(R.id.resourcewip_quantity);
-            wLocation = (TextView)  w.findViewById(R.id.resourcewip_location);
+            wName =  (TextView) w.findViewById(R.id.resourceworkinprogress_name);
+            wQuantity = (TextView)  w.findViewById(R.id.resourceworkinprogress_quantity);
+            wLocation = (TextView)  w.findViewById(R.id.resourceworkinprogress_location);
+            wOwner = (TextView)  w.findViewById(R.id.resourceworkinprogress_owner);
         }
     }
 }

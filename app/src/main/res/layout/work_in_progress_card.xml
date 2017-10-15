@@ -6,7 +6,7 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:padding="16dp"
     android:layout_marginBottom="4dp"
-    card_view:cardBackgroundColor="#98EE99">
+    card_view:cardBackgroundColor="#FFA270">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
         >
 
         <TextView
-            android:id="@+id/resourcewip_name"
+            android:id="@+id/resourceworkinprogress_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -27,15 +27,22 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/resourcewip_quantity"
-            android:layout_toRightOf="@+id/resourcewip_name"
+            android:id="@+id/resourceworkinprogress_quantity"
+            android:layout_toRightOf="@+id/resourceworkinprogress_name"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/resourcewip_location"
-            android:layout_toRightOf="@+id/resourcewip_quantity"
+            android:id="@+id/resourceworkinprogress_owner"
+            android:layout_toRightOf="@+id/resourceworkinprogress_quantity"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/resourceworkinprogress_location"
+            android:layout_toRightOf="@+id/resourceworkinprogress_owner"
             />
 
     </LinearLayout>

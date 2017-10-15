@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -48,8 +49,19 @@ public class Overview extends Fragment {
         //MAKE CLASS AND PUT HERE
         final ArrayList<JobOverviewResourceClass> JobResourcesclass = new ArrayList<>();
         final String jobId = ((GlobalData)getContext().getApplicationContext()).getJobId();
+<<<<<<< HEAD
+
+        TextView jobNum = (TextView)rootView.findViewById(R.id.job_overview_title);
+        jobNum.setText("Job Number: "+jobId);
+
+        ProgressBar firstBar = (ProgressBar)rootView.findViewById(R.id.progressBar);
+        firstBar.setMax(100);
+        firstBar.setProgress(66);
+
+=======
         TextView jobNum = (TextView)rootView.findViewById(R.id.job_overview_title);
         jobNum.setText(jobId);
+>>>>>>> 834671d765cee420466a5253a06a52fe1d42d8f2
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         DatabaseReference jobsRef = rootRef.child("USERS").child("04950F4AE53F80").child("JOBS").child(jobId).child("RESOURCESNEEDED");
 

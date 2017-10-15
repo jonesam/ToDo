@@ -1,6 +1,8 @@
 package com.example.sherwin.todo;
 
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,7 +26,13 @@ import java.util.ArrayList;
 
 public class MyCustomAdapter extends ArrayAdapter<JobOverviewResourceClass> {
 
+
     private ArrayList<JobOverviewResourceClass> JobResourcesclass;
+    PendingIntent pendingIntent = PendingIntent.getActivity(getContext(), 0, new Intent(getContext(), getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
+
+
+
+
 
     public MyCustomAdapter(Context context, int textViewResourceId, ArrayList<JobOverviewResourceClass> JobResourcesclass) {
         super(context, textViewResourceId, JobResourcesclass);
@@ -53,6 +61,20 @@ public class MyCustomAdapter extends ArrayAdapter<JobOverviewResourceClass> {
             holder.code = (TextView) convertView.findViewById(R.id.Resource_checkBox_Text);
             holder.amnt = (TextView) convertView.findViewById(R.id.Resource_checkBox_amount_Text);
             convertView.setTag(holder);
+//Add NFC on click
+
+
+
+            //end NFC OnClick
+
+
+
+
+
+
+
+
+
 
             holder.name.setOnClickListener( new View.OnClickListener() {
                 public void onClick(View v) {
@@ -89,6 +111,14 @@ public class MyCustomAdapter extends ArrayAdapter<JobOverviewResourceClass> {
                         }
                     });
                     resource.setSelected(cb.isChecked());
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 834671d765cee420466a5253a06a52fe1d42d8f2
+
+>>>>>>> 3ea4b3d78bafadef461f51ec7d46ce549c3cba4d
                    //END OF ONCLICK ACTIVITY
                 }
             });
