@@ -118,7 +118,10 @@ public class MyCustomAdapter extends ArrayAdapter<JobOverviewResourceClass> {
 
 
                     resource.setSelected(cb.isChecked());
+<<<<<<< HEAD
 
+=======
+>>>>>>> 834671d765cee420466a5253a06a52fe1d42d8f2
 
                    //END OF ONCLICK ACTIVITY
                 }
