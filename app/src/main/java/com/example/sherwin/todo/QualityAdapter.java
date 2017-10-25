@@ -12,24 +12,18 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
 import java.util.ArrayList;
 
 /**
  * Created by savio on 21/09/2017.
  */
 
-public class MyCustomAdapter extends ArrayAdapter<JobOverviewResourceClass> {
+public class QualityAdapter extends ArrayAdapter<JobOverviewResourceClass> {
 
     private ArrayList<JobOverviewResourceClass> JobResourcesclass;
     PendingIntent pendingIntent = PendingIntent.getActivity(getContext(), 0, new Intent(getContext(), getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
-int i  =  0;
-    public MyCustomAdapter(Context context, int textViewResourceId, ArrayList<JobOverviewResourceClass> JobResourcesclass) {
+
+    public QualityAdapter(Context context, int textViewResourceId, ArrayList<JobOverviewResourceClass> JobResourcesclass) {
         super(context, textViewResourceId, JobResourcesclass);
         this.JobResourcesclass = new ArrayList<>();
         this.JobResourcesclass.addAll(JobResourcesclass);
@@ -67,39 +61,9 @@ int i  =  0;
                             "Clicked on Checkbox: " + cb.getText() +
                                     " is " + cb.isChecked(),
                             Toast.LENGTH_LONG).show();
-                    final Integer neededquant = resource.getmRESQUANTITY();
-                    final String shelfresname = resource.getShelfresneeded();
-                    //final Integer shelfquant =;
-                    final DatabaseReference ref = FirebaseDatabase.getInstance().getReference("RESOURCES/INVENTORY");
-                    ref.addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
-                            for (DataSnapshot data : dataSnapshot.getChildren()
-                                    ) {
 
-                                ResourceInventoryClass rcs = data.getValue(ResourceInventoryClass.class);
-                                String key = data.getKey();
-
-                                if (i == 0) {
-                                    if (rcs.NAME.equals(shelfresname)) {
-                                        final Integer shelfquant = rcs.getmQUANTITY();
-                                        i++;
-                                        final Integer NewShelfQuantity = shelfquant - neededquant;
-                                        ref.child(key).child("QUANTITY").setValue(NewShelfQuantity);
-                                        break;
-                                    }
-                                }
-                            }
-                        }
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-                            Log.e("Chat", "The read failed: " + databaseError.getDetails());
-                        }
-                    });
                     resource.setSelected(cb.isChecked());
-
-
-                   //END OF ONCLICK ACTIVITY
+                    //END OF ONCLICK ACTIVITY
                 }
             });
         }

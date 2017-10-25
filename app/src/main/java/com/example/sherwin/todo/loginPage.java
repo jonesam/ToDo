@@ -15,7 +15,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 public class loginPage extends AppCompatActivity {
 
@@ -43,6 +42,7 @@ public class loginPage extends AppCompatActivity {
                     Toast.LENGTH_LONG).show();
             finish();
         }
+        //buttonbypass
         Button toMain = (Button) findViewById(R.id.but_bypass);
         toMain.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -76,8 +76,8 @@ public class loginPage extends AppCompatActivity {
                 if(serialID.equalsIgnoreCase("04950f4ae53f80")){
                     String jobPath = "USERS/04950F4AE53F80/LOGTIME/";
                     final DatabaseReference myRef = FirebaseDatabase.getInstance().getReference(jobPath);
-                    LogClass logClass = new LogClass(date.format(Calendar.getInstance().getTime()), time.format(Calendar.getInstance().getTime()),"");
-                    myRef.child(date.format(Calendar.getInstance().getTime())).setValue(logClass);
+                   // LogClass logClass = new LogClass(date.format(Calendar.getInstance().getTime()), time.format(Calendar.getInstance().getTime()),"");
+                   // myRef.child(date.format(Calendar.getInstance().getTime())).setValue(logClass);
 
                     Intent goToConfirm = new Intent(this, confirmLogin.class);
                     startActivity(goToConfirm);

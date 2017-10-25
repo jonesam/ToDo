@@ -32,11 +32,15 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="61dp"
+        android:layout_marginBottom="40dp"
         android:text="@string/end_but"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-
+    <ListView
+        android:id="@+id/job_quality_list_view"
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/quality_title"
+        android:layout_height="350dp" />
 
     </RelativeLayout>
